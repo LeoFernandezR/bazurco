@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.jpeg";
+
 const pathname = Astro.url.pathname;
 
 const routes = [
@@ -12,34 +15,37 @@ const routes = [
 const year = new Date().getFullYear();
 ---
 
-<aside class="flex flex-col w-1/5 bg-gray-100 p-4">
-  <div class="flex items-center mb-4">
-    <img src="/logo.png" alt="Logo" class="h-12 w-12 mr-2" />
-    <h1 class="text-xl font-bold">Mi Empresa</h1>
+<aside class="flex flex-col w-1/5 p-4 justify-between">
+  <div id="content-sidebar">
+    <header>
+      <div class="flex items-center mb-4">
+        <Image src={logo} alt="Logo bazurco" class="w-full h-full" />
+      </div>
+      <p class="text-gray-600 mb-4 text-center text-xs">
+        Bienvenido a nuestro sitio web. Explora nuestros servicios y contáctanos
+        para más información.
+      </p>
+    </header>
+    <nav>
+      <ul>
+        {
+          routes.map((route) => (
+            <li>
+              <a
+                href={route.path}
+                class={`block p-4 text-lg ${pathname === route.path ? "bg-blue-500 text-white" : "text-gray-700 hover:bg-blue-100"}`}
+              >
+                {route.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
   </div>
-  <p class="text-gray-600 mb-4">
-    Bienvenido a nuestro sitio web. Explora nuestros servicios y contáctanos
-    para más información.
-  </p>
-  <nav>
-    <ul>
-      {
-        routes.map((route) => (
-          <li>
-            <a
-              href={route.path}
-              class={`block p-4 text-lg ${pathname === route.path ? "bg-blue-500 text-white" : "text-gray-700 hover:bg-blue-100"}`}
-            >
-              {route.name}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
   <footer>
-    <p class="text-sm text-gray-500 mt-4">
-      © {year} Mi Empresa. Todos los derechos reservados.
+    <p class="text-sm text-gray-500 mt-4 text-center">
+      © {year} Bazurco. Todos los derechos reservados.
     </p>
   </footer>
 </aside>

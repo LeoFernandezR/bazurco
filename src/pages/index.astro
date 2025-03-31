@@ -1,14 +1,44 @@
 ---
-import Welcome from "../components/Welcome.astro";
+import Carousel from "../components/Carousel";
 import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout
   title="Inicio - Bazurco"
   description="Bienvenido a Bazurco - Tu empresa de servicios de limpieza"
 >
-  <Welcome />
+  <Carousel client:load />
+  <div class="flex flex-col items-center justify-center w-full h-full">
+    <h1 class="text-4xl font-bold mb-4">Bienvenido a Bazurco</h1>
+    <p class="text-lg text-gray-700 mb-8">
+      Tu empresa de servicios de limpieza y mantenimiento.
+    </p>
+    <p class="text-lg text-gray-700 mb-8">
+      Nos especializamos en ofrecer soluciones de limpieza y mantenimiento
+      personalizadas para satisfacer las necesidades de nuestros clientes.
+    </p>
+    <p class="text-lg text-gray-700 mb-8">
+      Contamos con un equipo de profesionales altamente capacitados y
+      comprometidos con la calidad y la satisfacción del cliente.
+    </p>
+    <p class="text-lg text-gray-700 mb-8">
+      Explora nuestros servicios y descubre cómo podemos ayudarte a mantener tus
+      espacios limpios y ordenados.
+    </p>
+    <p class="text-lg text-gray-700 mb-8">
+      Si tienes alguna pregunta o necesitas más información, no dudes en
+      contactarnos. Estamos aquí para ayudarte.
+    </p>
+    <p class="text-lg text-gray-700 mb-8">
+      ¡Gracias por visitar nuestro sitio web!
+    </p>
+    <p class="text-lg text-gray-700 mb-8">
+      Si deseas saber más sobre nosotros, visita nuestra sección de
+      <a href="/nosotros" class="text-blue-500 hover:underline"> Nosotros</a>.
+    </p>
+    <p class="text-lg text-gray-700 mb-8">
+      Para conocer nuestros servicios, visita nuestra sección de
+      <a href="/servicios" class="text-blue-500 hover:underline"> Servicios</a>.
+    </p>
+  </div>
 </Layout>

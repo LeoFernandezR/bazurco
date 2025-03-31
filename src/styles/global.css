@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+.swiper-button-prev,
+.swiper-button-next {
+  @apply text-blue-500 bg-black/20 rounded-full p-8 flex items-center justify-center;
+}
