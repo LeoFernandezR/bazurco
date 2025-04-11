@@ -1,16 +1,66 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import Logo from "../assets/bazurco logo.png";
+import LogoLettering from "../components/LogoLettering";
 ---
 
-<Layout title="nosotros" description="Conoce más sobre nosotros">
-  <div class="flex flex-col items-center justify-center h-screen">
-    <h1 class="text-4xl font-bold mb-4">Nosotros</h1>
-    <p class="text-lg text-gray-700">
-      Somos una empresa dedicada a ofrecer los mejores servicios de calidad.
+<Layout title="Bazurco - Nosotros" description="Conoce más sobre nosotros">
+  <div class="py-16 bg-sky-900 flex justify-center items-center flex-col">
+    <Image src={Logo} alt="bazurco logo" width={150} />
+    <div class="w-[200px] text-white">
+      <LogoLettering />
+    </div>
+  </div>
+
+  <div class="w-[90%] mx-auto py-4 text-lg flex flex-col gap-6">
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa fugiat
+      cumque voluptatum debitis, recusandae odio explicabo alias officiis beatae
+      quaerat pariatur nobis distinctio illo, voluptates vero ducimus! Nam, amet
+      laborum. Eaque consequatur labore perspiciatis officia autem asperiores,
+      dolor, est ab adipisci odit debitis rem enim quia eos. Porro velit,
+      pariatur nesciunt assumenda accusamus voluptatum cum in beatae similique,
+      nobis repudiandae?
     </p>
-    <p class="text-lg text-gray-700">
-      Nuestro equipo está comprometido con la excelencia y la satisfacción del
-      cliente.
-    </p>
+
+    <div>
+      <h4 class="text-2xl font-bold text-blue-400 mb-2">Misión</h4>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit aut
+        aliquam libero tempore non autem ad, ratione distinctio quisquam
+        perferendis voluptate pariatur placeat dolorum assumenda harum!
+        Reprehenderit ea sed accusamus! Eos sequi aut ea natus necessitatibus
+        nulla veritatis autem optio quas rem, possimus quisquam? Perferendis,
+        cum! Odit architecto sequi repellendus harum delectus quaerat quibusdam
+        in error. Aliquam ipsum facere voluptas.
+      </p>
+    </div>
+
+    <div>
+      <h4 class="text-2xl font-bold text-blue-400 mb-2">Visión</h4>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit aut
+        aliquam libero tempore non autem ad, ratione distinctio quisquam
+        perferendis voluptate pariatur placeat dolorum assumenda harum!
+        Reprehenderit ea sed accusamus! Eos sequi aut ea natus necessitatibus
+        nulla veritatis autem optio quas rem, possimus quisquam? Perferendis,
+        cum! Odit architecto sequi repellendus harum delectus quaerat quibusdam
+        in error. Aliquam ipsum facere voluptas.
+      </p>
+    </div>
+
+    <div>
+      <h4 class="text-2xl font-bold text-blue-400 mb-2">Valores</h4>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit aut
+        aliquam libero tempore non autem ad, ratione distinctio quisquam
+        perferendis voluptate pariatur placeat dolorum assumenda harum!
+        Reprehenderit ea sed accusamus! Eos sequi aut ea natus necessitatibus
+        nulla veritatis autem optio quas rem, possimus quisquam? Perferendis,
+        cum! Odit architecto sequi repellendus harum delectus quaerat quibusdam
+        in error. Aliquam ipsum facere voluptas.
+      </p>
+    </div>
   </div>
 </Layout>

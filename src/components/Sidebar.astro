@@ -1,13 +1,26 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/logo.jpeg";
+import {
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconChevronDown,
+} from "@tabler/icons-react";
 
 const pathname = Astro.url.pathname;
 
 const routes = [
   { name: "Home", path: "/" },
   { name: "Nosotros", path: "/nosotros" },
-  { name: "Servicios", path: "/servicios" },
+  {
+    name: "Servicios",
+    path: "/servicios",
+    subRoutes: [
+      { name: "Mantenimiento", path: "/servicios/mantenimiento" },
+      { name: "Limpieza", path: "/servicios/limpieza" },
+      { name: "Facility Service", path: "/servicios/facility-service" },
+    ],
+  },
   { name: "Contacto", path: "/contacto" },
   { name: "Recursos Humanos", path: "/recursos-humanos" },
 ];
@@ -15,7 +28,9 @@ const routes = [
 const year = new Date().getFullYear();
 ---
 
-<aside class="flex flex-col w-1/5 p-4 justify-between">
+<aside
+  class="flex flex-col w-1/5 p-4 justify-between shadow-xl max-h-scren overflow-y-auto"
+>
   <div id="content-sidebar">
     <header>
       <div class="flex items-center mb-4">
@@ -26,25 +41,74 @@ const year = new Date().getFullYear();
         para más información.
       </p>
     </header>
-    <nav>
+    <nav class="overflow-y-auto">
       <ul>
         {
-          routes.map((route) => (
-            <li>
-              <a
-                href={route.path}
-                class={`block p-4 text-lg ${pathname === route.path ? "bg-blue-500 text-white" : "text-gray-700 hover:bg-blue-100"}`}
-              >
-                {route.name}
-              </a>
-            </li>
-          ))
+          routes.map((route) => {
+            if (route.subRoutes?.length) {
+              return (
+                <li class="mb-2">
+                  <details class="group transition-all">
+                    <summary
+                      class={`flex items-center justify-between p-4 text-lg ${pathname === route.path ? "bg-blue-500 text-white" : "text-gray-700 hover:bg-blue-100"}`}
+                    >
+                      {route.name}
+                      <span class="ml-2 text-gray-400 group-open:rotate-180 transition-transform">
+                        <IconChevronDown className="w-5 h-5" />
+                      </span>
+                    </summary>
+                    <ul class="pl-4">
+                      {route.subRoutes.map((subRoute) => (
+                        <li>
+                          <a
+                            href={subRoute.path}
+                            class={`block p-2 text-lg ${pathname === subRoute.path ? "bg-blue-500 text-white" : "text-gray-700 hover:bg-blue-100"}`}
+                          >
+                            {subRoute.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                </li>
+              );
+            }
+
+            return (
+              <li>
+                <a
+                  href={route.path}
+                  class={`block p-4 text-lg ${pathname === route.path ? "bg-blue-500 text-white" : "text-gray-700 hover:bg-blue-100"}`}
+                >
+                  {route.name}
+                </a>
+              </li>
+            );
+          })
         }
       </ul>
     </nav>
   </div>
   <footer>
-    <p class="text-sm text-gray-500 mt-4 text-center">
+    <nav class="flex justify-center gap-2">
+      <a
+        href="https://www.instagram.com/bazurco_s.i?igsh=cG10NGVxN2JxYThn"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-[25px] text-blue-400 hover:text-blue-600 transition-colors"
+      >
+        <IconBrandInstagram className="w-full h-auto" />
+      </a>
+      <a
+        href="https://www.linkedin.com/company/bazurco/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-[25px] text-blue-400 hover:text-blue-600 transition-colors"
+      >
+        <IconBrandLinkedin className="w-full h-auto" />
+      </a>
+    </nav>
+    <p class="text-xs text-gray-500 mt-4 text-center">
       © {year} Bazurco. Todos los derechos reservados.
     </p>
   </footer>

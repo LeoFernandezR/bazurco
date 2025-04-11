@@ -1,6 +1,13 @@
 ---
+import { Image } from "astro:assets";
 import Carousel from "../components/Carousel";
 import Layout from "../layouts/Layout.astro";
+import Logo from "../assets/bazurco logo.png";
+import {
+  IconUsersGroup,
+  IconHeartHandshake,
+  IconSeeding,
+} from "@tabler/icons-react";
 ---
 
 <Layout
@@ -8,37 +15,75 @@ import Layout from "../layouts/Layout.astro";
   description="Bienvenido a Bazurco - Tu empresa de servicios de limpieza"
 >
   <Carousel client:load />
-  <div class="flex flex-col items-center justify-center w-full h-full">
-    <h1 class="text-4xl font-bold mb-4">Bienvenido a Bazurco</h1>
-    <p class="text-lg text-gray-700 mb-8">
-      Tu empresa de servicios de limpieza y mantenimiento.
-    </p>
-    <p class="text-lg text-gray-700 mb-8">
-      Nos especializamos en ofrecer soluciones de limpieza y mantenimiento
-      personalizadas para satisfacer las necesidades de nuestros clientes.
-    </p>
-    <p class="text-lg text-gray-700 mb-8">
-      Contamos con un equipo de profesionales altamente capacitados y
-      comprometidos con la calidad y la satisfacción del cliente.
-    </p>
-    <p class="text-lg text-gray-700 mb-8">
-      Explora nuestros servicios y descubre cómo podemos ayudarte a mantener tus
-      espacios limpios y ordenados.
-    </p>
-    <p class="text-lg text-gray-700 mb-8">
-      Si tienes alguna pregunta o necesitas más información, no dudes en
-      contactarnos. Estamos aquí para ayudarte.
-    </p>
-    <p class="text-lg text-gray-700 mb-8">
-      ¡Gracias por visitar nuestro sitio web!
-    </p>
-    <p class="text-lg text-gray-700 mb-8">
-      Si deseas saber más sobre nosotros, visita nuestra sección de
-      <a href="/nosotros" class="text-blue-500 hover:underline"> Nosotros</a>.
-    </p>
-    <p class="text-lg text-gray-700 mb-8">
-      Para conocer nuestros servicios, visita nuestra sección de
-      <a href="/servicios" class="text-blue-500 hover:underline"> Servicios</a>.
-    </p>
+  <div class="flex flex-col gap-24 w-full h-full max-w-[90%] mx-auto py-12">
+    <div class="grid grid-cols-2 gap-6">
+      <div class="flex gap-2 items-center">
+        <Image src={Logo} alt="bazurco logo" class="w-[200px]" />
+        <div class="pt-4">
+          <h6 class="text-blue-400 font-bold text-2xl">Bazurco</h6>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Consequuntur, reiciendis. Similique, molestias dolor libero vero
+            eligendi repudiandae delectus. Aut optio totam dicta voluptates
+            placeat? Eos, voluptatem error. Illo, corrupti aut.
+          </p>
+        </div>
+      </div>
+      <div class="flex gap-2 items-center">
+        <div class="w-[900px]">
+          <IconUsersGroup className="w-full h-auto text-blue-400" />
+        </div>
+        <div class="pt-4">
+          <h6 class="text-blue-400 font-bold text-2xl">Equipo</h6>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Consequuntur, reiciendis. Similique, molestias dolor libero vero
+            eligendi repudiandae delectus. Aut optio totam dicta voluptates
+            placeat? Eos, voluptatem error. Illo, corrupti aut.
+          </p>
+        </div>
+      </div>
+      <div class="flex gap-2 items-center">
+        <div class="w-[900px]">
+          <IconHeartHandshake className="w-full h-auto text-blue-400" />
+        </div>
+        <div class="pt-4">
+          <h6 class="text-blue-400 font-bold text-2xl">Responsabilidad</h6>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Consequuntur, reiciendis. Similique, molestias dolor libero vero
+            eligendi repudiandae delectus. Aut optio totam dicta voluptates
+            placeat? Eos, voluptatem error. Illo, corrupti aut.
+          </p>
+        </div>
+      </div>
+      <div class="flex gap-2 items-center">
+        <div class="w-[900px]">
+          <IconSeeding className="w-full h-auto text-blue-400" />
+        </div>
+        <div class="pt-4">
+          <h6 class="text-blue-400 font-bold text-2xl">Medio Ambiente</h6>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Consequuntur, reiciendis. Similique, molestias dolor libero vero
+            eligendi repudiandae delectus. Aut optio totam dicta voluptates
+            placeat? Eos, voluptatem error. Illo, corrupti aut.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <p class="text-lg text-gray-700">
+        Si deseas saber más sobre nosotros, visita nuestra sección de
+        <a href="/nosotros" class="text-blue-500 hover:underline"> Nosotros</a>.
+      </p>
+      <p class="text-lg text-gray-700">
+        Para conocer nuestros servicios, visita nuestra sección de
+        <a href="/servicios" class="text-blue-500 hover:underline">
+          Servicios</a
+        >.
+      </p>
+    </div>
   </div>
 </Layout>
