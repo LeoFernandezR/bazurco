@@ -18,7 +18,6 @@ const routes = [
     subRoutes: [
       { name: "Mantenimiento", path: "/servicios/mantenimiento" },
       { name: "Limpieza", path: "/servicios/limpieza" },
-      { name: "Facility Service", path: "/servicios/facility-service" },
     ],
   },
   { name: "Contacto", path: "/contacto" },
@@ -36,10 +35,6 @@ const year = new Date().getFullYear();
       <div class="flex items-center mb-4">
         <Image src={logo} alt="Logo bazurco" class="w-full h-full" />
       </div>
-      <p class="text-gray-600 mb-4 text-center text-xs">
-        Bienvenido a nuestro sitio web. Explora nuestros servicios y contáctanos
-        para más información.
-      </p>
     </header>
     <nav class="overflow-y-auto">
       <ul>
@@ -48,21 +43,36 @@ const year = new Date().getFullYear();
             if (route.subRoutes?.length) {
               return (
                 <li class="mb-2">
-                  <details class="group transition-all">
+                  <details
+                    class="group transition-all"
+                    open={
+                      pathname !== "/" &&
+                      route.subRoutes.some((subroute) =>
+                        subroute.path.includes(pathname)
+                      )
+                    }
+                  >
                     <summary
-                      class={`flex items-center justify-between p-4 text-lg ${pathname === route.path ? "bg-blue-500 text-white" : "text-gray-700 hover:bg-blue-100"}`}
+                      class={`flex items-center justify-between p-4 text-lg cursor-pointer ${pathname !== "/" && route.subRoutes.some((subroute) => subroute.path.includes(pathname)) ? "bg-blue-100 text-gray-700" : "text-gray-700 hover:bg-blue-100"}`}
                     >
-                      {route.name}
+                      <span>{route.name}</span>
                       <span class="ml-2 text-gray-400 group-open:rotate-180 transition-transform">
                         <IconChevronDown className="w-5 h-5" />
                       </span>
                     </summary>
-                    <ul class="pl-4">
-                      {route.subRoutes.map((subRoute) => (
+                    <ul class="pl-4 relative">
+                      {route.subRoutes.map((subRoute, idx) => (
                         <li>
+                          <div
+                            style={{
+                              height: `${32 + idx * 60}px`,
+                              position: "absolute",
+                            }}
+                            class={`${pathname === subRoute.path ? "border-l border-b border-blue-400 left-[8px] w-4 top-0 transition-all -z-10" : ""}`}
+                          />
                           <a
                             href={subRoute.path}
-                            class={`block p-2 text-lg ${pathname === subRoute.path ? "bg-blue-500 text-white" : "text-gray-700 hover:bg-blue-100"}`}
+                            class={`block p-4 text-lg ${pathname === subRoute.path ? "bg-blue-500 text-white" : "text-gray-700 hover:bg-blue-100"}`}
                           >
                             {subRoute.name}
                           </a>

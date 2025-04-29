@@ -7,21 +7,19 @@ import Logo from "../assets/bazurco logo.png";
 import LogoLetteringSVG from "../assets/bazurco-logo-lettering.svg";
 
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/autoplay";
+import "swiper/css/parallax";
 import LogoLettering from "./LogoLettering";
 
 type Props = {};
 
 function Carousel({}: Props) {
-  console.log(LogoLetteringSVG);
-
   return (
     <Swiper
-      modules={[Autoplay, Navigation, Parallax]} // Importing Swiper modules
+      modules={[Autoplay, Parallax]} // Importing Swiper modules
       slidesPerView={1} // Show 1 slide at a time
       loop={true} // Infinite loop
-      // autoplay={{ delay: 3000, disableOnInteraction: false }} // Autoplay with 3 seconds delay
+      autoplay={{ delay: 3000, disableOnInteraction: false }} // Autoplay with 3 seconds delay
       className="h-screen" // Full screen height
       navigation
       parallax
