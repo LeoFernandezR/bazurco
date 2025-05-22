@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/bazurco logo completo.png";
+import { cn } from "../lib/utils";
+
+const pathname = Astro.url.pathname;
+
+const routes = [
+  { name: "Nosotros", path: "/nosotros" },
+  { name: "Servicios", path: "/servicios" },
+  { name: "Sustentabilidad", path: "/sustentabilidad" },
+  { name: "RRHH", path: "/recursos-humanos" },
+  { name: "Contacto", path: "/contacto" },
+];
+---
+
+<header class="bg-white shadow sticky top-0 z-10 pb-1">
+  <div class="flex justify-between items-center max-w-[80%] mx-auto">
+    <a href="/">
+      <div class="w-[300px] relative">
+        <Image
+          src={logo}
+          alt="Logo bazurco"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </a>
+    <nav>
+      <ul class="flex space-x-4 items-center">
+        {
+          routes.map((route) => (
+            <li>
+              <a
+                href={route.path}
+                class={cn(
+                  "uppercase rounded-full hover:bg-blue-500 hover:text-white py-2 px-3 font-semibold transition-colors duration-300",
+                  pathname === route.path && "bg-blue-500 text-white"
+                )}
+              >
+                {route.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,66 +1,121 @@
 ---
-import { Image } from "astro:assets";
+import PageParallax from "../components/PageParallax.astro";
 import Layout from "../layouts/Layout.astro";
-import Logo from "../assets/bazurco logo.png";
-import LogoLettering from "../components/LogoLettering";
+
+import heroImage from "../assets/hero.jpg";
+
+import ClientsCarousel from "../components/ClientsCarousel";
+
+const gridItems = [
+  {
+    title: "Nosotros",
+    description: "Conoce más sobre nosotros",
+    imageUrl: heroImage.src,
+  },
+  {
+    title: "Servicios",
+    description: "Descubre nuestros servicios",
+    imageUrl: heroImage.src,
+  },
+  {
+    title: "Sustentabilidad",
+    description: "Comprometidos con el medio ambiente",
+    imageUrl: heroImage.src,
+  },
+  {
+    title: "Sustentabilidad",
+    description: "Comprometidos con el medio ambiente",
+    imageUrl: heroImage.src,
+  },
+  {
+    title: "Sustentabilidad",
+    description: "Comprometidos con el medio ambiente",
+    imageUrl: heroImage.src,
+  },
+  {
+    title: "Sustentabilidad",
+    description: "Comprometidos con el medio ambiente",
+    imageUrl: heroImage.src,
+  },
+];
+
+const nosotrosData: Array<{
+  title: string;
+  description: string;
+  list?: string[];
+}> = [
+  {
+    title: "Calidad",
+    description:
+      "Bazurco brinda un servicio con marcada orientación a la satisfacción de los requerimientos y necesidades particulares de cada cliente. La excelencia del servicio es el principal objetivo, alcanzando a través de la mejora continua, el desarrollo humano, sustentabilidad, sumado a la utilización de nuevas tecnologías. La confianza depositada por los clientes de diversos rubros se debe a que Bazurco es una empresa de experiencia que brinda con garantía servicios de limpieza, mantenimiento y maquinaria.",
+  },
+
+  {
+    title: "Misión",
+    description:
+      "La misión de Bazurco es brindar un servicio de excelencia, especializado y sustentable, que responda a las necesidades de nuestros clientes con soluciones eficientes y confiables. Nos basamos en la mejora continua, la innovación y el compromiso con el entorno, construyendo relaciones duraderas basadas en la confianza, el profesionalismo y el respeto. Buscamos generar valor a largo plazo, tanto para nuestros clientes como para la comunidad y el medioambiente.",
+  },
+  {
+    title: "Visión",
+    description:
+      "Como empresa líder en servicios especializados y sustentables, nuestra visión es consolidar nuestra posición en el mercado y expandirnos a nuevas regiones, llevando nuestra eficiencia, innovación y compromiso a más comunidades. Queremos seguir generando impacto positivo, construyendo relaciones de confianza y promoviendo el desarrollo sostenible en cada lugar donde estemos presentes.",
+  },
+  {
+    title: "Valores",
+    description: "Con nuestros clientes y la sociedad",
+    list: [
+      "Conducta ética: integridad, honestidad, compromiso y responsabilidad",
+      "Comunicación efectiva: atendiendo a las necesidades del cliente y brindando respuestas.",
+      "Trabajo en equipo: para lograr la eficiencia en el servicio.",
+      "Sustentabilidad: teniendo como prioridad el cuidado del medio ambiente.",
+    ],
+  },
+];
 ---
 
 <Layout title="Bazurco - Nosotros" description="Conoce más sobre nosotros">
-  <div class="py-16 bg-sky-900 flex justify-center items-center flex-col">
-    <Image src={Logo} alt="bazurco logo" width={150} />
-    <div class="w-[200px] text-white">
-      <LogoLettering />
-    </div>
+  <PageParallax imageUrl={heroImage.src} title="Bienvenido a Bazurco" />
+
+  <div
+    class="grid grid-cols-[390px] sm:grid-cols-[repeat(2,390px)] lg:grid-cols-[repeat(3,390px)] w-[90%] place-content-center mx-auto gap-16 py-12"
+  >
+    {
+      gridItems.map((item) => (
+        <div class="w-[390px] h-[450px] overflow-hidden relative group">
+          <img
+            src={item.imageUrl}
+            alt={item.title}
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="text-white text-center">
+              <h2 class="text-xl font-bold">{item.title}</h2>
+              <p class="mt-2">{item.description}</p>
+            </div>
+          </div>
+        </div>
+      ))
+    }
   </div>
 
-  <div class="w-[90%] mx-auto py-4 text-lg flex flex-col gap-6">
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa fugiat
-      cumque voluptatum debitis, recusandae odio explicabo alias officiis beatae
-      quaerat pariatur nobis distinctio illo, voluptates vero ducimus! Nam, amet
-      laborum. Eaque consequatur labore perspiciatis officia autem asperiores,
-      dolor, est ab adipisci odit debitis rem enim quia eos. Porro velit,
-      pariatur nesciunt assumenda accusamus voluptatum cum in beatae similique,
-      nobis repudiandae?
-    </p>
+  <ClientsCarousel client:load />
 
-    <div>
-      <h4 class="text-2xl font-bold text-blue-400 mb-2">Misión</h4>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit aut
-        aliquam libero tempore non autem ad, ratione distinctio quisquam
-        perferendis voluptate pariatur placeat dolorum assumenda harum!
-        Reprehenderit ea sed accusamus! Eos sequi aut ea natus necessitatibus
-        nulla veritatis autem optio quas rem, possimus quisquam? Perferendis,
-        cum! Odit architecto sequi repellendus harum delectus quaerat quibusdam
-        in error. Aliquam ipsum facere voluptas.
-      </p>
-    </div>
-
-    <div>
-      <h4 class="text-2xl font-bold text-blue-400 mb-2">Visión</h4>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit aut
-        aliquam libero tempore non autem ad, ratione distinctio quisquam
-        perferendis voluptate pariatur placeat dolorum assumenda harum!
-        Reprehenderit ea sed accusamus! Eos sequi aut ea natus necessitatibus
-        nulla veritatis autem optio quas rem, possimus quisquam? Perferendis,
-        cum! Odit architecto sequi repellendus harum delectus quaerat quibusdam
-        in error. Aliquam ipsum facere voluptas.
-      </p>
-    </div>
-
-    <div>
-      <h4 class="text-2xl font-bold text-blue-400 mb-2">Valores</h4>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit aut
-        aliquam libero tempore non autem ad, ratione distinctio quisquam
-        perferendis voluptate pariatur placeat dolorum assumenda harum!
-        Reprehenderit ea sed accusamus! Eos sequi aut ea natus necessitatibus
-        nulla veritatis autem optio quas rem, possimus quisquam? Perferendis,
-        cum! Odit architecto sequi repellendus harum delectus quaerat quibusdam
-        in error. Aliquam ipsum facere voluptas.
-      </p>
-    </div>
+  <div class="flex px-8 py-16 gap-16">
+    {
+      nosotrosData.map((item) => (
+        <div class="flex-1 flex flex-col gap-4">
+          <h3 class="text-4xl font-semibold">{item.title}</h3>
+          {item?.list ? (
+            <ul class="list-disc mt-2">
+              {item.list.map((listItem) => (
+                <li class="ml-3">{listItem}</li>
+              ))}
+            </ul>
+          ) : (
+            <p class=" text-center text-justify">{item.description}</p>
+          )}
+        </div>
+      ))
+    }
   </div>
 </Layout>

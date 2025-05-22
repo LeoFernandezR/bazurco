@@ -1,0 +1,67 @@
+---
+import { IconBrandInstagram, IconBrandLinkedin } from "@tabler/icons-react";
+import { Year } from "./Year";
+
+const routes = [
+  { name: "Sobre Nosotros", path: "/nosotros" },
+  { name: "Sustentabilidad", path: "/sustentabilidad" },
+  { name: "Servicios", path: "/servicios" },
+  { name: "Contáctenos", path: "/contacto" },
+  { name: "Recursos Humanos", path: "/recursos-humanos" },
+];
+---
+
+<footer class="bg-gray-800 text-white py-12">
+  <div class="max-w-[75%] mx-auto flex justify-between">
+    <!-- Sobre la compañia -->
+    <div class="max-w-[35%]">
+      <h4 class="font-bold text-2xl mb-2">Bazurco</h4>
+      <p class="text-sm text-gray-300">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque,
+        deleniti facilis? Laboriosam aliquam consequuntur est nostrum ab,
+        molestias similique assumenda vero ullam nobis quasi modi sapiente unde
+        non, iusto ut? Voluptatibus, facilis.
+      </p>
+    </div>
+    <!-- Mapa del sitio -->
+    <div class="">
+      <h4 class="font-bold text-2xl mb-2 px-2">Mapa del sitio</h4>
+      <nav class="flex flex-col text-gray-300">
+        {
+          routes.map((route) => (
+            <a
+              href={route.path}
+              class="hover:text-white hover:bg-gray-400 px-2 py-0.5 rounded-full transition-colors duration-300"
+            >
+              {route.name}
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+    <!-- Contáctenos -->
+    <div class="">
+      <h4 class="font-bold text-2xl mb-2">Contáctenos</h4>
+      <ul class="text-gray-300 list-disc decoration-gray-300 pl-4">
+        <li><span class="text-white">Dirección:</span> Calle Falsa 123</li>
+        <li><span class="text-white">Teléfono:</span> +1 234 567 890</li>
+        <li><span class="text-white">Email:</span> contacto@bazurco.com</li>
+      </ul>
+      <nav class="flex gap-1 text-gray-300 mt-1">
+        <a href="https://www.instagram.com/bazurco/" target="_blank">
+          <IconBrandInstagram
+            className="size-8 text-gray-400 hover:text-white"
+          />
+        </a>
+        <a href="https://www.linkedin.com/company/bazurco/" target="_blank">
+          <IconBrandLinkedin
+            className="size-8 text-gray-400 hover:text-white"
+          />
+        </a>
+      </nav>
+    </div>
+  </div>
+  <!-- <p class="text-center text-xs text-gray-400 mt-4">
+    © <Year client:load /> Bazurco. Todos los derechos reservados.
+  </p> -->
+</footer>

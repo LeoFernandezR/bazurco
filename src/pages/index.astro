@@ -8,6 +8,19 @@ import {
   IconHeartHandshake,
   IconSeeding,
 } from "@tabler/icons-react";
+import Tabs from "../components/Tabs";
+
+import Service1 from "../assets/service1.jpg";
+import Hero from "../assets/hero.jpg";
+
+const Services = [
+  { title: "Instalaciones y complejos deportivos", img: Service1 },
+  { title: "Centros de salud", img: Service1 },
+  { title: "Shopping y centros comerciales", img: Service1 },
+  { title: "Aviones y aeropuertos", img: Service1 },
+  { title: "Fábricas y plantas industriales", img: Service1 },
+  { title: "Bancos y edificios gubernamentales", img: Service1 },
+];
 ---
 
 <Layout
@@ -15,7 +28,84 @@ import {
   description="Bienvenido a Bazurco - Tu empresa de servicios de limpieza"
 >
   <Carousel client:load />
-  <div class="flex flex-col gap-24 w-full h-full max-w-[90%] mx-auto py-12">
+  <Tabs client:load />
+
+  <!-- Servicios -->
+  <div>
+    <div class="max-w-[85%] mx-auto py-12">
+      <h1 class="text-4xl text-blue-500 text-center mb-12">
+        Conozca nuestros servicios
+      </h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          Services.map((service) => (
+            <a href="/servicios" class="max-h-[250px] relative group">
+              <Image
+                src={service.img}
+                alt={service.title}
+                class="w-full h-full object-cover rounded-lg shadow-lg"
+              />
+              <div class="scale-y-0 group-hover:scale-y-100 transition-transform duration-300 absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center origin-bottom p-2">
+                <h2 class="text-white text-3xl text-center">{service.title}</h2>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+  <!-- Conocenos -->
+  <div class="h-screen flex">
+    <div class="flex-1">
+      <div class="flex justify-center items-center bg-indigo-950 h-full">
+        <div class="mx-12">
+          <h2 class="text-white text-4xl text-center">
+            Cada experiencia suma a nuestra historia. Crecemos con propósito,
+            confianza y personas que piensan en personas.
+          </h2>
+          <nav class="flex gap-4 mt-8 justify-center">
+            <a
+              href="/servicios"
+              class="text-2xl px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600"
+              >Conozca lo que hacemos</a
+            >
+            <a
+              href="/contacto"
+              class="text-2xl px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600"
+              >Contáctanos</a
+            >
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="flex-1">
+      <Image src={Hero} alt="bazurco logo" class="object-cover w-full h-full" />
+    </div>
+  </div>
+
+  <!-- Ubicacion -->
+  <div class="max-w-[85%] mx-auto py-28">
+    <div class="flex items-center">
+      <div class="flex-1">
+        <h1 class="text-7xl font-black text-blue-500 mb-6">
+          Estamos en todo el país
+        </h1>
+        <p class="text-gray-500">
+          Consúltenos por los servicios ofrecidos en su departamento
+        </p>
+        <a
+          href=""
+          class="text-2xl px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 inline-block mt-4"
+          >Contáctanos</a
+        >
+      </div>
+      <div class="flex-1 flex justify-center items-center">
+        <Image src={Logo} alt="bazurco logo" class="w-[340px]" />
+      </div>
+    </div>
+  </div>
+</Layout>
+<!-- <div class="flex flex-col gap-24 w-full h-full max-w-[90%] mx-auto py-12">
     <div class="grid grid-cols-2 gap-6">
       <div class="flex gap-2 items-center">
         <Image src={Logo} alt="bazurco logo" class="w-[200px]" />
@@ -85,5 +175,4 @@ import {
         >.
       </p>
     </div>
-  </div>
-</Layout>
+  </div> -->
