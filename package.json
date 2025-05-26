@@ -11,6 +11,7 @@
   "dependencies": {
     "@astrojs/react": "^4.2.7",
     "@fontsource/poppins": "^5.2.5",
+    "@hookform/resolvers": "^5.0.1",
     "@tabler/icons-react": "^3.31.0",
     "@tailwindcss/vite": "^4.0.17",
     "@types/react": "^19.0.12",
@@ -19,8 +20,10 @@
     "framer-motion": "^12.12.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-hook-form": "^7.56.4",
     "swiper": "^11.2.6",
-    "tailwindcss": "^4.0.17"
+    "tailwindcss": "^4.0.17",
+    "zod": "^3.25.29"
   },
   "devDependencies": {
     "clsx": "^2.1.1",

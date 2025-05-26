@@ -7,10 +7,73 @@ import {
   IconBrandInstagram,
   IconBrandLinkedin,
 } from "@tabler/icons-react";
+
+import heroImage from "../assets/hero.jpg";
+import PageParallax from "../components/PageParallax.astro";
 ---
 
 <Layout title="Bazurco - Contacto" description="Información de contacto">
+  <PageParallax imageUrl={heroImage.src} title="Contáctanos" />
+
   <div
+    class="max-w-5xl mx-auto flex flex-col justify-center items-center py-24 text-center"
+  >
+    <h3 class="text-4xl font-semibold mb-4">Contáctanos</h3>
+    <p class="text-lg">
+      Para cualquier consulta o para obtener más información sobre nuestros
+      servicios, no dudes en ponerte en contacto con nosotros. Nuestro equipo
+      está disponible para responder tus preguntas y ofrecerte soluciones a
+      medida.
+    </p>
+    <br />
+    <div class="text-lg italic">
+      Esperamos tu mensaje. <br /> ¡No dudes en contactarnos!
+    </div>
+
+    <div class="flex gap-6">
+      <div class="flex gap-2 items-center">
+        <div class="w-[40px] text-blue-400">
+          <IconMail className="w-full h-auto" />
+        </div>
+        <p class="text-lg">Bazurco@gmail.com</p>
+      </div>
+      <div class="flex gap-2 items-center">
+        <div class="w-[40px] text-blue-400">
+          <IconMap2 className="w-full h-auto" />
+        </div>
+        <p class="text-lg">Calle Bazurco 2355, CABA</p>
+      </div>
+      <div class="flex gap-2 items-center">
+        <div class="w-[40px] text-blue-400">
+          <IconPhone className="w-full h-auto" />
+        </div>
+        <p class="text-lg">+54 9 11-2260-1678</p>
+      </div>
+    </div>
+    <br />
+    <div class="text-lg italic">Seguinos en nuestras redes sociales.</div>
+    <nav class="flex gap-2 items-center">
+      <a
+        href="https://www.instagram.com/bazurco_s.i?igsh=cG10NGVxN2JxYThn"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-[45px] text-blue-400 hover:text-blue-600 transition-colors"
+      >
+        <IconBrandInstagram className="w-full h-auto" />
+      </a>
+      <a
+        href="https://www.linkedin.com/company/bazurco/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-[40px] text-blue-400 hover:text-blue-600 transition-colors"
+      >
+        <IconBrandLinkedin className="w-full h-auto" />
+      </a>
+    </nav>
+  </div>
+</Layout>
+
+<!-- <div
     class="py-20 bg-sky-900 flex justify-center items-center flex-col text-white"
   >
     <h3 class="text-6xl font-bold">Contáctanos</h3>
@@ -37,7 +100,6 @@ import {
         <p class="text-2xl">+54 9 11-2260-1678</p>
       </div>
     </div>
-    <!-- Siguenos en nuestras redes sociales (Linkedin e Instagram): -->
     <div class="flex flex-col gap-2 items-center">
       <p class="text-xl">¡Seguinos en nuestras redes!</p>
       <nav class="flex gap-6">
@@ -59,5 +121,4 @@ import {
         </a>
       </nav>
     </div>
-  </div>
-</Layout>
+  </div> -->

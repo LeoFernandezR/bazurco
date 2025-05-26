@@ -1,31 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageParallax from "../components/PageParallax.astro";
+import heroImage from "../assets/hero.jpg";
+import HumanResourcesForm from "../components/HumanResourcesForm";
 ---
 
 <Layout
   title="Recursos Humanos"
   description="Información sobre nuestro equipo de recursos humanos"
 >
-  <div class="flex flex-col items-center justify-center h-screen">
-    <h1 class="text-4xl font-bold mb-4">Recursos Humanos</h1>
-    <p class="text-lg text-gray-700">
-      Aquí encontrarás información sobre nuestros procesos de selección y
-      desarrollo de talento.
-    </p>
-    <p class="text-lg text-gray-700">
-      Nuestro equipo de recursos humanos está aquí para ayudarte en tu
-      crecimiento profesional.
-    </p>
-  </div>
-  <div class="flex flex-col items-center justify-center h-screen">
-    <h2 class="text-3xl font-bold mb-4">Únete a nuestro equipo</h2>
-    <p class="text-lg text-gray-700">
-      Si estás interesado en formar parte de nuestra empresa, envíanos tu
-      currículum y carta de presentación.
-    </p>
-    <p class="text-lg text-gray-700">
-      Estamos buscando personas apasionadas y comprometidas con su trabajo.
-    </p>
-    <p class="text-lg text-gray-700">¡Esperamos conocerte pronto!</p>
-  </div>
+  <PageParallax imageUrl={heroImage.src} title="Recursos Humanos" />
+  <HumanResourcesForm client:load />
 </Layout>

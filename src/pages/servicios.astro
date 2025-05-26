@@ -1,40 +1,42 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import heroImage from "../assets/hero.jpg";
+import PageParallax from "../components/PageParallax.astro";
+import ServiceCard from "../components/ServiceCard";
+
+import Service1 from "../assets/service1.jpg";
+
+const ServicesData = [
+  {
+    title: "Mantenimiento",
+    description:
+      "El mantenimiento es fundamental para asegurar la continuidad y la optimización de las instalaciones de inmuebles y equipos en todas las actividades. El servicio de mantenimiento prestado por Bazurco se realiza a partir de analizar y diagnosticar el estado de equipos e instalaciones, para proponer las mejoras a realizar y el tipo de mantenimiento que resulte necesario.En Bazurco nos especializamos en brindar servicios integrales de mantenimiento para una amplia variedad de espacios, incluyendo hogares, oficinas, industrias, centros comerciales, fábricas y espacios verdes y recreativos. Nuestro enfoque combina la eficiencia operativa con el uso de tecnología y recursos adecuados para garantizar el correcto funcionamiento de instalaciones, equipos e infraestructuras. Nos ocupamos de tareas como mantenimiento eléctrico, sanitario, mecánico, climatización, pintura, jardinería y más, con personal capacitado y comprometido con altos estándares de calidad y seguridad. Trabajamos bajo una planificación personalizada para cada cliente, asegurando la continuidad operativa de los espacios y contribuyendo al cuidado del patrimonio edilicio a largo plazo.",
+    imageUrl: Service1.src,
+  },
+  {
+    title: "Limpieza",
+    description:
+      "La limpieza representa diferentes cosas para distintas personas y organizaciones, ya que cada espacio presenta necesidades específicas y expectativas particulares. Lo que todos tienen en común es la importancia de contar con un entorno limpio, ordenado y seguro, que contribuya al bienestar, promueva la productividad y genere una impresión positiva en quienes lo habitan o lo visitan. En Bazurco entendemos que un ambiente higiénico no solo impacta la salud, sino también el confort y la eficiencia de quienes lo habitan o visitan. Por eso, nuestro enfoque se basa en cumplir con los más altos estándares de seguridad e higiene, adaptándonos a las necesidades de cada cliente y cumpliendo con las normativas y certificaciones internacionales como ISO y protocolos sanitarios. Contamos con personal altamente capacitado y procesos estructurados que aseguran resultados consistentes y confiables, alineados con las mejores prácticas del sector. Nuestro compromiso es ofrecer un servicio profesional que brinde confianza, calidad y seguridad en cada detalle.",
+    imageUrl: Service1.src,
+  },
+];
 ---
 
 <Layout title="Servicios" description="Información sobre nuestros servicios">
-  <div class="flex flex-col items-center justify-center h-screen">
-    <h1 class="text-4xl font-bold mb-4">Servicios</h1>
-    <p class="text-lg text-gray-700">
-      Aquí encontrarás información sobre nuestros servicios y cómo podemos
-      ayudarte.
-    </p>
-    <p class="text-lg text-gray-700">
-      Nuestro equipo está listo para ofrecerte soluciones personalizadas.
-    </p>
-  </div>
-  <div class="flex flex-col items-center justify-center h-screen">
-    <h2 class="text-3xl font-bold mb-4">Contáctanos</h2>
-    <p class="text-lg text-gray-700">
-      Si tienes alguna pregunta o necesitas más información, no dudes en
-      contactarnos.
-    </p>
-    <p class="text-lg text-gray-700">
-      Estamos aquí para ayudarte y resolver tus dudas.
-    </p>
-    <p class="text-lg text-gray-700">¡Esperamos saber de ti pronto!</p>
-  </div>
-  <div class="flex flex-col items-center justify-center h-screen">
-    <h2 class="text-3xl font-bold mb-4">Nuestros Servicios</h2>
-    <p class="text-lg text-gray-700">
-      Ofrecemos una amplia gama de servicios para satisfacer tus necesidades.
-    </p>
-    <p class="text-lg text-gray-700">
-      Desde consultoría hasta desarrollo de software, tenemos la solución
-      perfecta para ti.
-    </p>
-    <p class="text-lg text-gray-700">
-      ¡Contáctanos para más información sobre nuestros servicios!
-    </p>
+  <PageParallax imageUrl={heroImage.src} title="Servicios" />
+
+  <div class="mx-auto max-w-[80%] py-16">
+    <div class="grid grid-cols-2 place-items-center gap-8">
+      {
+        ServicesData.map((service) => (
+          <ServiceCard
+            client:load
+            title={service.title}
+            description={service.description}
+            imageUrl={service.imageUrl}
+          />
+        ))
+      }
+    </div>
   </div>
 </Layout>

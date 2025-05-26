@@ -52,6 +52,7 @@ export default function ClientsCarousel() {
             disableOnInteraction: false,
           }}
           navigation={{ enabled: true }}
+          loop={true}
         >
           {loadingImages ? (
             <div className="w-full h-full flex items-center justify-center">

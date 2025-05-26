@@ -14,6 +14,9 @@ importers:
       '@fontsource/poppins':
         specifier: ^5.2.5
         version: 5.2.5
+      '@hookform/resolvers':
+        specifier: ^5.0.1
+        version: 5.0.1(react-hook-form@7.56.4(react@19.1.0))
       '@tabler/icons-react':
         specifier: ^3.31.0
         version: 3.31.0(react@19.1.0)
@@ -38,12 +41,18 @@ importers:
       react-dom:
         specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
+      react-hook-form:
+        specifier: ^7.56.4
+        version: 7.56.4(react@19.1.0)
       swiper:
         specifier: ^11.2.6
         version: 11.2.6
       tailwindcss:
         specifier: ^4.0.17
         version: 4.0.17
+      zod:
+        specifier: ^3.25.29
+        version: 3.25.29
     devDependencies:
       clsx:
         specifier: ^2.1.1
@@ -325,6 +334,11 @@ packages:
   '@fontsource/poppins@5.2.5':
     resolution: {integrity: sha512-1S3k45pZOz2jqGPPqKw0in3uxFwnB+d5jSU8Tp9YwH/dIJptE3jdkQbYN0QD861GtuOpn6QhPW/yKt1w7hVRBQ==}
 
+  '@hookform/resolvers@5.0.1':
+    resolution: {integrity: sha512-u/+Jp83luQNx9AdyW2fIPGY6Y7NG68eN2ZW8FOJYL+M0i4s49+refdJdOp/A9n9HFQtQs3HIDHQvX3ZET2o7YA==}
+    peerDependencies:
+      react-hook-form: ^7.55.0
+
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
@@ -580,6 +594,9 @@ packages:
 
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
+
+  '@standard-schema/utils@0.3.0':
+    resolution: {integrity: sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==}
 
   '@swc/helpers@0.5.17':
     resolution: {integrity: sha512-5IKx/Y13RsYd+sauPb2x+U/xZikHjolzfuDgTAl/Tdf3Q8rslRvC19NKDLgAJQ6wsqADk10ntlv08nPFw/gO/A==}
@@ -1478,6 +1495,12 @@ packages:
     peerDependencies:
       react: ^19.1.0
 
+  react-hook-form@7.56.4:
+    resolution: {integrity: sha512-Rob7Ftz2vyZ/ZGsQZPaRdIefkgOSrQSPXfqBdvOPwJfoGnjwRJUs7EM7Kc1mcoDv3NOtqBzPGbcMB8CGn9CKgw==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
+
   react-refresh@0.17.0:
     resolution: {integrity: sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ==}
     engines: {node: '>=0.10.0'}
@@ -1888,8 +1911,8 @@ packages:
       typescript: ^4.9.4 || ^5.0.2
       zod: ^3
 
-  zod@3.24.2:
-    resolution: {integrity: sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==}
+  zod@3.25.29:
+    resolution: {integrity: sha512-xetH/muIYuAyN7YJGKh99jkBQq/XbGEyTkv7JC4YYsWppHmfoU1MDoQa441WD1QMDaeCaEBO0e0hl1iSmluNQQ==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -2170,6 +2193,11 @@ snapshots:
 
   '@fontsource/poppins@5.2.5': {}
 
+  '@hookform/resolvers@5.0.1(react-hook-form@7.56.4(react@19.1.0))':
+    dependencies:
+      '@standard-schema/utils': 0.3.0
+      react-hook-form: 7.56.4(react@19.1.0)
+
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
       '@img/sharp-libvips-darwin-arm64': 1.0.4
@@ -2364,6 +2392,8 @@ snapshots:
       '@types/hast': 3.0.4
 
   '@shikijs/vscode-textmate@10.0.2': {}
+
+  '@standard-schema/utils@0.3.0': {}
 
   '@swc/helpers@0.5.17':
     dependencies:
@@ -2591,9 +2621,9 @@ snapshots:
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
       yocto-spinner: 0.2.1
-      zod: 3.24.2
-      zod-to-json-schema: 3.24.5(zod@3.24.2)
-      zod-to-ts: 1.2.0(typescript@5.8.2)(zod@3.24.2)
+      zod: 3.25.29
+      zod-to-json-schema: 3.24.5(zod@3.25.29)
+      zod-to-ts: 1.2.0(typescript@5.8.2)(zod@3.25.29)
     optionalDependencies:
       sharp: 0.33.5
     transitivePeerDependencies:
@@ -3502,6 +3532,10 @@ snapshots:
       react: 19.1.0
       scheduler: 0.26.0
 
+  react-hook-form@7.56.4(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+
   react-refresh@0.17.0: {}
 
   react@19.1.0: {}
@@ -3915,15 +3949,15 @@ snapshots:
 
   yoctocolors@2.1.1: {}
 
-  zod-to-json-schema@3.24.5(zod@3.24.2):
+  zod-to-json-schema@3.24.5(zod@3.25.29):
     dependencies:
-      zod: 3.24.2
+      zod: 3.25.29
 
-  zod-to-ts@1.2.0(typescript@5.8.2)(zod@3.24.2):
+  zod-to-ts@1.2.0(typescript@5.8.2)(zod@3.25.29):
     dependencies:
       typescript: 5.8.2
-      zod: 3.24.2
+      zod: 3.25.29
 
-  zod@3.24.2: {}
+  zod@3.25.29: {}
 
   zwitch@2.0.4: {}
