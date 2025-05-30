@@ -1,7 +1,9 @@
 ---
 import PageParallax from "../components/PageParallax.astro";
-import heroImage from "../assets/hero.jpg";
+import heroImage from "../assets/parallax-sustentabilidad.jpg";
+import sectionImage from "../assets/seccion-sustentabilidad.png";
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
 
 const SustentabilidadData = [
   {
@@ -28,8 +30,8 @@ const SustentabilidadData = [
 >
   <PageParallax imageUrl={heroImage.src} title="Sustentabilidad" />
   <div class="relative">
-    <img
-      src={heroImage.src}
+    <Image
+      src={sectionImage}
       alt="Responsabilidad Ambiental"
       class="w-full h-full object-cover absolute inset-0 opacity-10"
     />

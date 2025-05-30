@@ -1,16 +1,14 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination, Parallax } from "swiper/modules";
-import Home1 from "../assets/home-1.webp";
-import Home2 from "../assets/home-2.webp";
-import Home3 from "../assets/home-3.webp";
-import Logo from "../assets/bazurco logo.png";
+import Home1 from "../assets/home-carousel-1.png";
+import Home2 from "../assets/home-carousel-2.jpg";
+import Home3 from "../assets/home-carousel-3.png";
 
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/parallax";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
-import LogoLettering from "./LogoLettering";
 
 type Props = {};
 
@@ -44,9 +42,20 @@ function Carousel({}: Props) {
               alt="limpieza bazurco"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black opacity-70"></div>
+            <div className="absolute inset-0 bg-black opacity-50"></div>
             <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold">
-              <div className="flex flex-col items-center gap-10">
+              <div className="flex flex-col gap-4 justify-center items-center">
+                <h2 className="text-5xl ">
+                  Comprometidos con el medio ambiente
+                </h2>
+                <a
+                  href="/sustentabilidad"
+                  className="bg-indigo-500 rounded-lg text-white hover:bg-indigo-600 cursor-pointer py-1 px-2  transition-colors text-xl"
+                >
+                  Conozca más
+                </a>
+              </div>
+              {/* <div className="flex flex-col items-center gap-10">
                 <div className="flex items-center flex-col">
                   <div className="w-[150px]">
                     <img
@@ -64,7 +73,7 @@ function Carousel({}: Props) {
                   <h3 className="text-white">Limpieza</h3>
                   <h3>Mucho mas</h3>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </SwiperSlide>
@@ -75,9 +84,18 @@ function Carousel({}: Props) {
               alt="limpieza bazurco"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black opacity-70"></div>
-            <div className="absolute inset-0 flex flex-col text-white text-4xl font-bold justify-between">
-              <div className="flex justify-between px-12 py-8 w-full">
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+            <div className="absolute inset-0 flex flex-col text-white text-4xl font-bold items-center justify-center">
+              <div className="flex flex-col justify-center items-center gap-4">
+                <h2 className="text-5xl ">Acerca de nosotros</h2>
+                <a
+                  href="/servicios"
+                  className="bg-indigo-500 rounded-lg text-white hover:bg-indigo-600 cursor-pointer py-1 px-2  transition-colors text-xl"
+                >
+                  Conozca nuestros servicios
+                </a>
+              </div>
+              {/* <div className="flex justify-between px-12 py-8 w-full">
                 <div className="w-[150px]">
                   <img
                     src={Logo.src}
@@ -97,7 +115,7 @@ function Carousel({}: Props) {
                     <h2 className="text-5xl">Servicios</h2>
                   </span>
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </SwiperSlide>
@@ -106,11 +124,20 @@ function Carousel({}: Props) {
             <img
               src={Home3.src}
               alt="limpieza bazurco"
-              className="w-full h-full -scale-x-100 object-cover"
+              className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black opacity-70"></div>
-            <div className="absolute inset-0 flex flex-col text-white text-4xl font-bold justify-between">
-              <div className="flex justify-end ">
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+            <div className="absolute inset-0 flex flex-col text-white text-4xl font-bold items-center justify-center">
+              <div className="flex flex-col justify-center gap-4 items-center">
+                <h2 className="text-5xl ">Facility Services</h2>
+                <a
+                  href="/nosotros"
+                  className="bg-indigo-500 rounded-lg text-white hover:bg-indigo-600 cursor-pointer py-1 px-2  transition-colors text-xl"
+                >
+                  Acerca de nosotros
+                </a>
+              </div>
+              {/* <div className="flex justify-end ">
                 <a href="/servicios">
                   <span className="block bg-blue-800 rounded-full py-4 px-12 mt-24 mr-12">
                     <h2 className="text-4xl">Mantenimiento General</h2>
@@ -122,7 +149,7 @@ function Carousel({}: Props) {
                   <img src={Logo.src} alt="bazurco logo limpieza" />
                   <LogoLettering />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </SwiperSlide>

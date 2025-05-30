@@ -2,40 +2,52 @@
 import PageParallax from "../components/PageParallax.astro";
 import Layout from "../layouts/Layout.astro";
 
-import heroImage from "../assets/hero.jpg";
+import heroImage from "../assets/parallax-nosotros.png";
+import Service1 from "../assets/servicio-gym.png";
+import Service2 from "../assets/servicio-centro-de-salud.jpg";
+import Service3 from "../assets/servicio-shopping.jpg";
+import Service4 from "../assets/servicio-espacios-verdes.webp";
+import Service5 from "../assets/servicio-fabrica.png";
+import Service6 from "../assets/servicio-edificio.webp";
 
 import ClientsCarousel from "../components/ClientsCarousel";
 
 const gridItems = [
   {
-    title: "Nosotros",
-    description: "Conoce más sobre nosotros",
-    imageUrl: heroImage.src,
+    title: "Instalaciones y complejos deportivos",
+    description:
+      "Con una planificación personalizada para cada caso, nuestros servicios de limpieza e higienización juegan un papel clave, garantizando un entorno óptimo y cuidado que eleva la experiencia tanto de los organizadores como de los participantes.",
+    imageUrl: Service1.src,
   },
   {
-    title: "Servicios",
-    description: "Descubre nuestros servicios",
-    imageUrl: heroImage.src,
+    title: "Centro de salud",
+    description:
+      "Existen lugares donde se pone a prueba la capacidad de servicio: los grandes centros de atención sanitaria. Allí es donde se requiere la combinación de personal altamente especializado, innovación tecnológica y productos químicos que garanticen la gestión medioambiental y las adecuadas barreras sanitarias. Se utilizan sistemas de limpieza diferenciados para las zonas de alto, mediano y bajo riesgo.",
+    imageUrl: Service2.src,
   },
   {
-    title: "Sustentabilidad",
-    description: "Comprometidos con el medio ambiente",
-    imageUrl: heroImage.src,
+    title: "Hogares empresas y centros comerciales",
+    description:
+      "En Bazurco brindamos servicios de limpieza y mantenimiento diseñados para adaptarse a las necesidades específicas de cada cliente. Nuestro compromiso se refleja en la eficiencia y calidad de cada intervención, respaldadas por un equipo profesional y dedicado. Trabajamos con responsabilidad y atención al detalle para garantizar entornos limpios, cuidados y pensados para el bienestar de las personas que los utilizan a diario. ",
+    imageUrl: Service3.src,
   },
   {
-    title: "Sustentabilidad",
-    description: "Comprometidos con el medio ambiente",
-    imageUrl: heroImage.src,
+    title: "Parquizado y mantenimiento de espacios verdes",
+    description:
+      "Nos especializamos en el cuidado de espacios verdes, manteniéndolos saludables y estéticos durante todo el año. Adaptamos nuestras técnicas según las necesidades de cada estación y aplicamos prácticas sustentables que protegen el entorno. Colaboramos con cada cliente para crear espacios armónicos, funcionales y en sintonía con la naturaleza",
+    imageUrl: Service4.src,
   },
   {
-    title: "Sustentabilidad",
-    description: "Comprometidos con el medio ambiente",
-    imageUrl: heroImage.src,
+    title: "Fábricas y plantas industriales",
+    description:
+      "La empresa cuenta con amplia experiencia en servicios de mantenimiento en fábricas y plantas industriales, siempre estableciendo procesos específicos y desarrollando tareas de procedimientos solicitados por cada cliente. manera segura y sustentable.",
+    imageUrl: Service5.src,
   },
   {
-    title: "Sustentabilidad",
-    description: "Comprometidos con el medio ambiente",
-    imageUrl: heroImage.src,
+    title: "Bancos y edificios gubernamentales",
+    description:
+      "Considerando la importancia que tiene este rubro, se ofrece personal calificado de alta experiencia y baja rotación, haciendo de las instalaciones un lugar acorde a las exigencias del competitivo mercado financiero y gubernamental.",
+    imageUrl: Service6.src,
   },
 ];
 
@@ -47,7 +59,7 @@ const nosotrosData: Array<{
   {
     title: "Calidad",
     description:
-      "Bazurco brinda un servicio con marcada orientación a la satisfacción de los requerimientos y necesidades particulares de cada cliente. La excelencia del servicio es el principal objetivo, alcanzando a través de la mejora continua, el desarrollo humano, sustentabilidad, sumado a la utilización de nuevas tecnologías. La confianza depositada por los clientes de diversos rubros se debe a que Bazurco es una empresa de experiencia que brinda con garantía servicios de limpieza, mantenimiento y maquinaria.",
+      "En Bazurco, alcanzar la excelencia es el motor que impulsa cada una de nuestras acciones. Para lograrlo, invertimos en la capacitación continua de nuestro equipo humano, fomentando tanto el desarrollo profesional como el crecimiento personal. Incorporamos maquinaria de última generación y tecnologías innovadoras que optimizan nuestros procesos, al mismo tiempo que mantenemos un fuerte compromiso con la sostenibilidad y el cuidado del medio ambiente, asegurando así un servicio de calidad con impacto positivo.",
   },
 
   {
@@ -88,10 +100,10 @@ const nosotrosData: Array<{
             class="w-full h-full object-cover"
           />
           <div class="absolute inset-0 bg-indigo-500 scale-0 group-hover:scale-100 transition-transform duration-500 origin-top-left rounded-lg" />
-          <div class="absolute inset-0 bg-black/50 flex items-center justify-center transition-opacity duration-300">
-            <div class="text-white text-center">
-              <h2 class="text-xl font-bold">{item.title}</h2>
-              <p class="mt-2">{item.description}</p>
+          <div class="absolute inset-0 bg-black/50 flex  justify-center transition-opacity duration-300 p-6">
+            <div class="text-white ">
+              <h4 class="text-3xl  uppercase">{item.title}</h4>
+              <p class="mt-2 text-justify">{item.description}</p>
             </div>
           </div>
         </div>
