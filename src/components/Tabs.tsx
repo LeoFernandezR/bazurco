@@ -1,6 +1,8 @@
 import { useState, type JSX } from "react";
 import { cn } from "../lib/utils";
 import FacilityImg from "../assets/home-1.webp";
+import sustentabilityImg from "../assets/seccion-sustentabilidad.png";
+import humanResourcesImg from "../assets/home-tab-3.jpg";
 
 export default function Tabs() {
   const [Tab, setTab] = useState<Tabs>("Facility Services");
@@ -72,7 +74,7 @@ const SustentabilidadTab = () => {
     <div className="flex justify-center gap-16">
       <div className="size-[340px] relative flex-1">
         <img
-          src={FacilityImg.src}
+          src={sustentabilityImg.src}
           alt="Facility Services"
           className="object-cover w-full h-full"
         />
@@ -109,7 +111,7 @@ const RRHHTab = () => {
     <div className="flex justify-between gap-16">
       <div className="size-[340px] relative flex-1">
         <img
-          src={FacilityImg.src}
+          src={humanResourcesImg.src}
           alt="Facility Services"
           className="object-cover w-full h-full"
         />
