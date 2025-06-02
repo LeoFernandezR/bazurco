@@ -1,7 +1,8 @@
 import { useState, type JSX } from "react";
 import { cn } from "../lib/utils";
 import FacilityImg from "../assets/home-1.webp";
-import sustentabilityImg from "../assets/seccion-sustentabilidad.png";
+
+import sustentabilityImg from "../assets/parallax-sustentabilidad.jpg";
 import humanResourcesImg from "../assets/home-tab-3.jpg";
 
 export default function Tabs() {
