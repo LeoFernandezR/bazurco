@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination, Parallax } from "swiper/modules";
-import Home1 from "../assets/home-carousel-1.png";
-import Home2 from "../assets/home-carousel-2.jpg";
+import Home1 from "../assets/Comprometidos con el nuevo ambiente.jpg";
+import Home2 from "../assets/acerca de nosotros.jpg";
 import Home3 from "../assets/home-carousel-3.png";
 
 import "swiper/css";
