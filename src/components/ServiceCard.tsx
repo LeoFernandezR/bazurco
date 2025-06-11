@@ -31,16 +31,16 @@ export default function ServiceCard({
       {/* Overlay */}
       <div
         className={cn(
-          "text-white bg-black/60 p-4 rounded-b-lg transition-all duration-300 h-auto"
+          "text-white bg-black/70 p-4 rounded-b-lg transition-all duration-300 h-auto"
         )}
       >
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        <h4 className="text-2xl font-semibold mb-2">{title}</h4>
 
         {/* Description */}
         <p
           className={cn(
-            "text-sm transition-all duration-300",
-            expanded ? "line-clamp-none" : "line-clamp-3"
+            " transition-all duration-300",
+            expanded ? "line-clamp-none text-justify" : "line-clamp-3"
           )}
         >
           {description}

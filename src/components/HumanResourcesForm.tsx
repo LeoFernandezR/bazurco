@@ -362,10 +362,10 @@ export default function HumanResourcesForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`w-full py-3 px-4 rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200 ${
+          className={`w-full py-3 px-4 rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-offset-2 transition duration-200 cursor-pointer ${
             isSubmitting
               ? "bg-gray-400 cursor-not-allowed"
-              : "bg-blue-600 hover:bg-blue-700 text-white"
+              : "bg-indigo-500 hover:bg-indigo-600 text-white"
           }`}
         >
           {isSubmitting ? (

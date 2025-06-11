@@ -113,11 +113,11 @@ const nosotrosData: Array<{
 
   <ClientsCarousel client:load />
 
-  <div class="flex px-8 py-16 gap-16">
+  <div class="flex px-20 py-16 gap-16">
     {
       nosotrosData.map((item) => (
-        <div class="flex-1 flex flex-col gap-4">
-          <h3 class="text-4xl font-semibold">{item.title}</h3>
+        <div class="flex-1 flex flex-col gap-2">
+          <h3 class="text-4xl font-semibold text-blue-400">{item.title}</h3>
           {item?.list ? (
             <ul class="list-disc mt-2">
               {item.list.map((listItem) => (
