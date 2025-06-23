@@ -46,11 +46,11 @@ const FacilityTab = () => {
           Qué hacemos
         </h3>
         <p className="text-justify">
-          Bazurco ofrece servicios integrales de mantenimiento y limpieza en una
-          amplia variedad de espacios, incluyendo instalaciones y complejos
-          deportivos, centros culturales, educativos, fábricas, plantas
-          industriales, shoppings y centros comerciales, garantizando ambientes
-          limpios, seguros y funcionales para sus usuarios.
+          Nuestra empresa se dedica a brindar servicios de limpieza y
+          mantenimiento integral en una amplia variedad de espacios y ámbitos
+          diferentes. Analizamos las distintas necesidades de nuestros clientes
+          y en base a eso aplicamos un estrategia de trabajo especifica para
+          cada solicitud.
         </p>
       </div>
       <div className="flex-1">
@@ -58,12 +58,16 @@ const FacilityTab = () => {
           Cómo lo hacemos
         </h3>
         <p className="text-justify">
-          En Bazurco trabajamos con una visión clara y responsable. Creando
-          valor para nuestros grupos de interés y apostando al desarrollo
-          sostenible. Reflejamos este compromiso en acciones concretas y
-          reportes transparentes, alineándose con estándares ASG (ambientales,
-          sociales y de gobierno) y adaptándonos a las necesidades de cada
-          cliente para ofrecer un servicio a medida.
+          Aplicando estrategias de trabajo claras y responsables. Enfocados en
+          una constante comunicación con nuestros clientes y también con
+          nuestros trabajadores. Sabiendo que son ellos quienes nos darán el
+          feedback necesario para entender las necesidades especificas de cada
+          uno.
+        </p>
+        <p className="text-justify mt-2">
+          Nos mantenemos en constante capacitación de personal y siempre
+          aplicando nuevas tecnologías. De esta forma buscamos alcanzar un
+          resultado con la mayor eficacia posible
         </p>
       </div>
     </div>

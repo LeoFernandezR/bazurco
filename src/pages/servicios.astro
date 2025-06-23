@@ -2,23 +2,50 @@
 import Layout from "../layouts/Layout.astro";
 import heroImage from "../assets/sERVICIOS.BUENA.webp";
 import PageParallax from "../components/PageParallax.astro";
-import ServiceCard from "../components/ServiceCard";
 
-import Service1 from "../assets/servicio-mantenimiento.png";
-import Service2 from "../assets/servicio-limpieza.jpg";
+import Service1 from "../assets/servicios-gimnasio.jpeg";
+import Service2 from "../assets/servicio-centro-de-salud.jpg";
+import Service3 from "../assets/servicio-shopping.jpg";
+import Service4 from "../assets/servicio-espacios-verdes.webp";
+import Service5 from "../assets/servicio-fabrica.png";
+import Service6 from "../assets/servicio-edificio.webp";
 
-const ServicesData = [
+const serviceData = [
   {
-    title: "Mantenimiento",
+    title: "Instalaciones y complejos deportivos",
     description:
-      "El mantenimiento es fundamental para asegurar la continuidad y la optimización de las instalaciones de inmuebles y equipos en todas las actividades. El servicio de mantenimiento prestado por Bazurco se realiza a partir de analizar y diagnosticar el estado de equipos e instalaciones, para proponer las mejoras a realizar y el tipo de mantenimiento que resulte necesario.En Bazurco nos especializamos en brindar servicios integrales de mantenimiento para una amplia variedad de espacios, incluyendo hogares, oficinas, industrias, centros comerciales, fábricas y espacios verdes y recreativos. Nuestro enfoque combina la eficiencia operativa con el uso de tecnología y recursos adecuados para garantizar el correcto funcionamiento de instalaciones, equipos e infraestructuras. Nos ocupamos de tareas como mantenimiento eléctrico, sanitario, mecánico, climatización, pintura, jardinería y más, con personal capacitado y comprometido con altos estándares de calidad y seguridad. Trabajamos bajo una planificación personalizada para cada cliente, asegurando la continuidad operativa de los espacios y contribuyendo al cuidado del patrimonio edilicio a largo plazo.",
+      "Con una planificación personalizada para cada caso, nuestros servicios de limpieza e higienización juegan un papel clave, garantizando un entorno óptimo y cuidado que eleva la experiencia tanto de los organizadores como de los participantes.",
     imageUrl: Service1.src,
   },
   {
-    title: "Limpieza",
+    title: "Centro de salud",
     description:
-      "La limpieza representa diferentes cosas para distintas personas y organizaciones, ya que cada espacio presenta necesidades específicas y expectativas particulares. Lo que todos tienen en común es la importancia de contar con un entorno limpio, ordenado y seguro, que contribuya al bienestar, promueva la productividad y genere una impresión positiva en quienes lo habitan o lo visitan. En Bazurco entendemos que un ambiente higiénico no solo impacta la salud, sino también el confort y la eficiencia de quienes lo habitan o visitan. Por eso, nuestro enfoque se basa en cumplir con los más altos estándares de seguridad e higiene, adaptándonos a las necesidades de cada cliente y cumpliendo con las normativas y certificaciones internacionales como ISO y protocolos sanitarios. Contamos con personal altamente capacitado y procesos estructurados que aseguran resultados consistentes y confiables, alineados con las mejores prácticas del sector. Nuestro compromiso es ofrecer un servicio profesional que brinde confianza, calidad y seguridad en cada detalle.",
+      "Existen lugares donde se pone a prueba la capacidad de servicio: los grandes centros de atención sanitaria. Allí es donde se requiere la combinación de personal altamente especializado, innovación tecnológica y productos químicos que garanticen la gestión medioambiental y las adecuadas barreras sanitarias. Se utilizan sistemas de limpieza diferenciados para las zonas de alto, mediano y bajo riesgo.",
     imageUrl: Service2.src,
+  },
+  {
+    title: "Hogares empresas y centros comerciales",
+    description:
+      "En Bazurco brindamos servicios de limpieza y mantenimiento diseñados para adaptarse a las necesidades específicas de cada cliente. Nuestro compromiso se refleja en la eficiencia y calidad de cada intervención, respaldadas por un equipo profesional y dedicado. Trabajamos con responsabilidad y atención al detalle para garantizar entornos limpios, cuidados y pensados para el bienestar de las personas que los utilizan a diario. ",
+    imageUrl: Service3.src,
+  },
+  {
+    title: "Parquizado y mantenimiento de espacios verdes",
+    description:
+      "Nos especializamos en el cuidado de espacios verdes, manteniéndolos saludables y estéticos durante todo el año. Adaptamos nuestras técnicas según las necesidades de cada estación y aplicamos prácticas sustentables que protegen el entorno. Colaboramos con cada cliente para crear espacios armónicos, funcionales y en sintonía con la naturaleza",
+    imageUrl: Service4.src,
+  },
+  {
+    title: "Fábricas y plantas industriales",
+    description:
+      "La empresa cuenta con amplia experiencia en servicios de mantenimiento en fábricas y plantas industriales, siempre estableciendo procesos específicos y desarrollando tareas de procedimientos solicitados por cada cliente. manera segura y sustentable.",
+    imageUrl: Service5.src,
+  },
+  {
+    title: "Bancos y edificios gubernamentales",
+    description:
+      "Considerando la importancia que tiene este rubro, se ofrece personal calificado de alta experiencia y baja rotación, haciendo de las instalaciones un lugar acorde a las exigencias del competitivo mercado financiero y gubernamental.",
+    imageUrl: Service6.src,
   },
 ];
 ---
@@ -26,18 +53,26 @@ const ServicesData = [
 <Layout title="Servicios" description="Información sobre nuestros servicios">
   <PageParallax imageUrl={heroImage.src} title="Servicios" />
 
-  <div class="mx-auto max-w-[80%] py-16">
-    <div class="grid grid-cols-2 place-items-center gap-8">
-      {
-        ServicesData.map((service) => (
-          <ServiceCard
-            client:load
-            title={service.title}
-            description={service.description}
-            imageUrl={service.imageUrl}
+  <div
+    class="grid grid-cols-[390px] sm:grid-cols-[repeat(2,390px)] lg:grid-cols-[repeat(3,390px)] w-[90%] place-content-center mx-auto gap-16 py-12"
+  >
+    {
+      serviceData.map((item) => (
+        <div class="w-[390px] h-[450px] overflow-hidden relative group rounded-lg">
+          <img
+            src={item.imageUrl}
+            alt={item.title}
+            class="w-full h-full object-cover"
           />
-        ))
-      }
-    </div>
+          <div class="absolute inset-0 bg-indigo-500 scale-0 group-hover:scale-100 transition-transform duration-500 origin-top-left rounded-lg" />
+          <div class="absolute inset-0 bg-black/50 flex  justify-center transition-opacity duration-300 p-6">
+            <div class="text-white ">
+              <h4 class="text-3xl  uppercase">{item.title}</h4>
+              <p class="mt-2 text-justify">{item.description}</p>
+            </div>
+          </div>
+        </div>
+      ))
+    }
   </div>
 </Layout>

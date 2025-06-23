@@ -7,7 +7,7 @@ interface ServiceCardProps {
   imageUrl: string;
 }
 
-export default function ServiceCard({
+export default function NosotrosCard({
   title,
   description,
   imageUrl,

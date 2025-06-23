@@ -26,38 +26,34 @@ import PageParallax from "../components/PageParallax.astro";
         referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <div class="flex-1 flex flex-col justify-between">
-      <div>
-        <h3 class="text-4xl font-semibold mb-4 text-blue-400">
-          Llamenos al +54 9 11-6925-7936
-        </h3>
+      <div class="space-y-4">
         <p class="text-lg">
           Para cualquier consulta o para obtener más información sobre nuestros
           servicios, no dudes en ponerte en contacto con nosotros. Nuestro
           equipo está disponible para responder tus preguntas y ofrecerte
           soluciones a medida.
         </p>
+        <div class="flex flex-col gap-2">
+          <div class="flex gap-2 items-center">
+            <div class="w-[40px] text-blue-400">
+              <IconMail className="w-full h-auto" />
+            </div>
+            <p class="text-lg">Bazurco@gmail.com</p>
+          </div>
+          <div class="flex gap-2 items-center">
+            <div class="w-[40px] text-blue-400">
+              <IconMap2 className="w-full h-auto" />
+            </div>
+            <p class="text-lg">Calle Bazurco 2355, CABA</p>
+          </div>
+          <div class="flex gap-2 items-center">
+            <div class="w-[40px] text-blue-400">
+              <IconPhone className="w-full h-auto" />
+            </div>
+            <p class="text-lg">+54 9 11-6925-7936</p>
+          </div>
+        </div>
       </div>
-      <div class="flex flex-col">
-        <div class="flex gap-2 items-center">
-          <div class="w-[40px] text-blue-400">
-            <IconMail className="w-full h-auto" />
-          </div>
-          <p class="text-lg">Bazurco@gmail.com</p>
-        </div>
-        <div class="flex gap-2 items-center">
-          <div class="w-[40px] text-blue-400">
-            <IconMap2 className="w-full h-auto" />
-          </div>
-          <p class="text-lg">Calle Bazurco 2355, CABA</p>
-        </div>
-        <div class="flex gap-2 items-center">
-          <div class="w-[40px] text-blue-400">
-            <IconPhone className="w-full h-auto" />
-          </div>
-          <p class="text-lg">+54 9 11-6925-7936</p>
-        </div>
-      </div>
-      <br />
       <div class="flex items-center flex-col justify-center">
         <div class="text-lg italic">Seguinos en nuestras redes sociales.</div>
         <nav class="flex gap-2 items-center">
