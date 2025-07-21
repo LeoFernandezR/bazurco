@@ -14,12 +14,15 @@ import PageParallax from "../components/PageParallax.astro";
 
 <Layout title="Bazurco - Contacto" description="Información de contacto">
   <PageParallax imageUrl={heroImage.src} title="Contáctanos" />
-  <div class="flex mx-auto max-w-[80%] gap-8 py-24">
+  <div
+    class="flex flex-col-reverse md:flex-row mx-auto max-w-[80%] gap-8 py-24"
+  >
     <div class="flex-1">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.084908273002!2d-58.50362692452602!3d-34.57671805607241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb656cc5c4d17%3A0x9b63525dff961743!2sBazurco%202355%2C%20C1419%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1749652158448!5m2!1ses!2sar"
         width="600"
         height="450"
+        class="max-w-[600px] w-full h-[50vh] md:h-[450px]"
         style="border:0;"
         allowfullscreen=""
         loading="lazy"

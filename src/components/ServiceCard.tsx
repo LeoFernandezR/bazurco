@@ -17,7 +17,7 @@ export default function NosotrosCard({
   return (
     <div
       className={cn(
-        "transition-all duration-300 w-[496px] rounded-lg relative shadow-lg overflow-hidden flex flex-col justify-end ",
+        "transition-all duration-300 max-w-[496px] rounded-lg relative shadow-lg overflow-hidden flex flex-col justify-end ",
         expanded ? "h-auto" : "h-[320px]"
       )}
     >

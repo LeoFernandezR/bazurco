@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import logo from "../assets/bazurco logo completo.png";
 import { cn } from "../lib/utils";
+import HamburgerMenu from "./HamburgerMenu";
 
 const pathname = Astro.url.pathname;
 
@@ -15,8 +16,8 @@ const routes = [
 ---
 
 <header class="bg-white shadow sticky top-0 z-10 pb-1">
-  <div class="flex justify-between items-center max-w-[80%] mx-auto">
-    <a href="/">
+  <div class="flex justify-between items-center md:max-w-[80%] mx-auto">
+    <a href="/" class="relative z-20">
       <div class="w-[300px] relative">
         <Image
           src={logo}
@@ -25,7 +26,8 @@ const routes = [
         />
       </div>
     </a>
-    <nav>
+    <HamburgerMenu client:load />
+    <nav class="hidden md:block">
       <ul class="flex space-x-4 items-center">
         {
           routes.map((route) => (

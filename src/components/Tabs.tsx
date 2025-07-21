@@ -10,7 +10,7 @@ export default function Tabs() {
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-full">
-      <div className="flex w-full">
+      <div className="flex flex-col md:flex-row w-full">
         {tabs.map((tab) => (
           <button
             key={tab}

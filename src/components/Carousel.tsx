@@ -15,16 +15,19 @@ const slides = [
     title: "Comprometidos con el medio ambiente",
     buttonText: "Conozca más",
     img: Home1.src,
+    href: "/sustentabilidad",
   },
   {
     title: "Acerca de nosotros",
     buttonText: "Conozca nuestros servicios",
     img: Home2.src,
+    href: "/servicios",
   },
   {
     title: "Facility Services",
     buttonText: "Acerca de nosotros",
     img: Home3.src,
+    href: "/nosotros",
   },
 ];
 
@@ -64,10 +67,12 @@ function Carousel({}: Props) {
               <div className="absolute inset-0 bg-black/60"></div>
               <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold">
                 <div className="flex flex-col gap-6 justify-center items-center">
-                  <h1 className="text-7xl">{slide.title}</h1>
+                  <h1 className="md:text-7xl text-4xl text-center">
+                    {slide.title}
+                  </h1>
                   <a
-                    href="/sustentabilidad"
-                    className="bg-indigo-500 rounded-lg text-white hover:bg-indigo-600 cursor-pointer py-2 px-4  transition-colors text-2xl"
+                    href={slide.href}
+                    className="bg-indigo-500 rounded-lg text-white hover:bg-indigo-600 cursor-pointer py-2 px-4  transition-colors text-xl md:text-2xl"
                   >
                     {slide.buttonText}
                   </a>

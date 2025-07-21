@@ -3,3 +3,10 @@
 @theme {
   --font-sans: "Poppins", "sans-serif";
 }
+
+@media (max-width: 767px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+}
