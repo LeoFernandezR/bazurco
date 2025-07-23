@@ -38,7 +38,7 @@ export default function ClientsCarousel() {
   }, []);
 
   return (
-    <div className="py-24 bg-blue-950 ">
+    <div className="py-12 md:py-24 bg-blue-950 ">
       <div className="w-[85%] mx-auto ">
         <h2 className="text-center text-2xl font-bold mb-8 text-white">
           Nuestros Clientes
@@ -62,7 +62,7 @@ export default function ClientsCarousel() {
             clientsImages.map(({ path, metadata: { src } }) => (
               <SwiperSlide
                 key={path}
-                className="flex justify-center items-center !bg-white !size-[200px] "
+                className="flex justify-center items-center !bg-white !size-[100px]  md:!size-[200px] "
               >
                 <img
                   src={src}

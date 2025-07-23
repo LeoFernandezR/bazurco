@@ -72,7 +72,7 @@ function Carousel({}: Props) {
                   </h1>
                   <a
                     href={slide.href}
-                    className="bg-indigo-500 rounded-lg text-white hover:bg-indigo-600 cursor-pointer py-2 px-4  transition-colors text-xl md:text-2xl"
+                    className="bg-indigo-500 rounded-lg text-white hover:bg-indigo-600 cursor-pointer py-2 px-4 transition-colors text-lg md:text-2xl"
                   >
                     {slide.buttonText}
                   </a>

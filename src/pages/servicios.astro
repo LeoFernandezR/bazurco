@@ -54,20 +54,20 @@ const serviceData = [
   <PageParallax imageUrl={heroImage.src} title="Servicios" />
 
   <div
-    class="grid grid-cols-[390px] sm:grid-cols-[repeat(2,390px)] lg:grid-cols-[repeat(3,390px)] w-[90%] place-content-center mx-auto gap-16 py-12"
+    class="max-w-[90%] mx-auto gap-16 py-12 flex flex-wrap justify-center items-center"
   >
     {
       serviceData.map((item) => (
-        <div class="w-[390px] h-[450px] overflow-hidden relative group rounded-lg">
+        <div class="w-[390px] h-[80vh] md:h-[70vh] overflow-hidden relative group rounded-lg">
           <img
             src={item.imageUrl}
             alt={item.title}
             class="w-full h-full object-cover"
           />
           <div class="absolute inset-0 bg-indigo-500 scale-0 group-hover:scale-100 transition-transform duration-500 origin-top-left rounded-lg" />
-          <div class="absolute inset-0 bg-black/50 flex  justify-center transition-opacity duration-300 p-6">
+          <div class="absolute inset-0 bg-black/50 flex  justify-center transition-opacity duration-300 p-6 ">
             <div class="text-white ">
-              <h4 class="text-3xl  uppercase">{item.title}</h4>
+              <h4 class="text-3xl uppercase break-normal">{item.title}</h4>
               <p class="mt-2 text-justify">{item.description}</p>
             </div>
           </div>

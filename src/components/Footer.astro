@@ -12,9 +12,11 @@ const routes = [
 ---
 
 <footer class="bg-gray-800 text-white py-12">
-  <div class="max-w-[75%] mx-auto flex flex-col md:flex-row justify-between">
+  <div
+    class="md:max-w-[75%] max-w-[85%] mx-auto flex flex-col gap-4 md:flex-row justify-between"
+  >
     <!-- Sobre la compañia -->
-    <div class="max-w-[35%]">
+    <div class="md:max-w-[35%]">
       <h4 class="font-bold text-2xl mb-2">Bazurco</h4>
       <p class="text-sm text-gray-300 text-justify">
         Bazurco ofrece servicios de limpieza y mantenimiento de alta calidad,
@@ -24,8 +26,8 @@ const routes = [
       </p>
     </div>
     <!-- Mapa del sitio -->
-    <div class="">
-      <h4 class="font-bold text-2xl mb-2 px-2">Mapa del sitio</h4>
+    <div class="hidden md:block">
+      <h4 class="font-bold text-2xl mb-2 md:px-2">Mapa del sitio</h4>
       <nav class="flex flex-col text-gray-300">
         {
           routes.map((route) => (

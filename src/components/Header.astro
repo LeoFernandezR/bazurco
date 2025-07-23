@@ -18,7 +18,7 @@ const routes = [
 <header class="bg-white shadow sticky top-0 z-10 pb-1">
   <div class="flex justify-between items-center md:max-w-[80%] mx-auto">
     <a href="/" class="relative z-20">
-      <div class="w-[300px] relative">
+      <div class="max-w-[300px] relative">
         <Image
           src={logo}
           alt="Logo bazurco"
@@ -26,8 +26,10 @@ const routes = [
         />
       </div>
     </a>
-    <HamburgerMenu client:load />
-    <nav class="hidden md:block">
+    <div class="lg:hidden">
+      <HamburgerMenu client:load />
+    </div>
+    <nav class="hidden lg:block">
       <ul class="flex space-x-4 items-center">
         {
           routes.map((route) => (

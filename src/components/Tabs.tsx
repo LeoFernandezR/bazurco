@@ -33,8 +33,8 @@ export default function Tabs() {
 
 const FacilityTab = () => {
   return (
-    <div className="flex justify-center gap-16">
-      <div className="size-[340px] relative flex-1">
+    <div className="flex justify-center flex-col md:flex-row gap-16">
+      <div className="h-[340px] max-w-[340px] relative flex-1">
         <img
           src={FacilityImg.src}
           alt="Facility Services"
@@ -76,8 +76,8 @@ const FacilityTab = () => {
 
 const SustentabilidadTab = () => {
   return (
-    <div className="flex justify-center gap-16">
-      <div className="size-[340px] relative flex-1">
+    <div className="flex flex-col md:flex-row justify-center gap-16">
+      <div className="h-[340px] max-w-[340px] relative flex-1">
         <img
           src={sustentabilityImg.src}
           alt="Facility Services"
@@ -113,8 +113,8 @@ const SustentabilidadTab = () => {
 
 const RRHHTab = () => {
   return (
-    <div className="flex justify-between gap-16">
-      <div className="size-[340px] relative flex-1">
+    <div className="flex flex-col md:flex-row justify-between gap-16">
+      <div className="h-[340px] max-w-[340px] relative flex-1">
         <img
           src={humanResourcesImg.src}
           alt="Facility Services"
