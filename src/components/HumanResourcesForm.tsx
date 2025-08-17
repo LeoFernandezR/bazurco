@@ -2,9 +2,10 @@
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { useForm as useFormspree } from "@formspree/react";
 
 const OFICIOS = [
-  "LIMPIEZA",
+  "Limpieza",
   "Plomería",
   "Carpintería",
   "Jardinería",
@@ -41,7 +42,7 @@ const formSchema = z
     cuil: z
       .string()
       .regex(
-        /^[0-9]{2}-[0-9]{8}-[0-9]{1}$/,
+        /^[0-9]{2}-[0-9]{7,8}-[0-9]{1}$/,
         "El CUIL debe tener el formato XX-XXXXXXXX-X"
       ),
 
@@ -96,24 +97,17 @@ export default function HumanResourcesForm() {
     },
   });
 
+  const [_state, send] = useFormspree("mblkbrzo");
+
   const selectedOficios = watch("oficios");
   const showOtroField = selectedOficios?.includes("Otro");
 
   const onSubmit = async (data: FormData) => {
     try {
-      // Simular delay de envío
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      const finalData = {
-        ...data,
-        oficios: data.oficios
-          .map((oficio) => (oficio === "Otro" ? data.otroOficio : oficio))
-          .filter(Boolean),
-      };
-
-      console.log("Form data:", finalData);
+      const response = await send(data);
+      console.log("Form data:", response);
       alert("¡Formulario enviado exitosamente!");
-      reset();
+      // reset();
     } catch (error) {
       console.error("Error al enviar formulario:", error);
       alert("Error al enviar el formulario. Intente nuevamente.");
