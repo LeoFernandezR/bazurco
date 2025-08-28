@@ -67,7 +67,7 @@ const FacilityTab = () => {
         <p className="text-justify mt-2">
           Nos mantenemos en constante capacitación de personal y siempre
           aplicando nuevas tecnologías. De esta forma buscamos alcanzar un
-          resultado con la mayor eficacia posible
+          resultado con la mayor eficacia posible.
         </p>
       </div>
     </div>

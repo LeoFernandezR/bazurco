@@ -261,7 +261,7 @@ export default function HumanResourcesForm() {
             Oficios
           </label>
           <p className="text-sm text-gray-500 mb-4">
-            Seleccione todos los oficios que maneja (puede elegir varios):
+            Seleccione los oficios que tenga experiencia (puede elegir varios):
           </p>
 
           <Controller
