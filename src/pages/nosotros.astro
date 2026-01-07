@@ -9,22 +9,49 @@ import Service2 from "../assets/servicio-centro-de-salud.jpg";
 import ClientsCarousel from "../components/ClientsCarousel";
 import NosotrosCard from "../components/ServiceCard";
 
-const nosotrosGrid = [
+// ! Client removed this grid...
+// const nosotrosGrid = [
+//   {
+//     title: "Mantenimiento",
+//     description:
+//       "El mantenimiento es fundamental para asegurar la continuidad y la optimización de las instalaciones de inmuebles y equipos en todas las actividades. El servicio de mantenimiento prestado por Bazurco se realiza a partir de analizar y diagnosticar el estado de equipos e instalaciones, para proponer las mejoras a realizar y el tipo de mantenimiento que resulte necesario.En Bazurco nos especializamos en brindar servicios integrales de mantenimiento para una amplia variedad de espacios, incluyendo hogares, oficinas, industrias, centros comerciales, fábricas y espacios verdes y recreativos. Nuestro enfoque combina la eficiencia operativa con el uso de tecnología y recursos adecuados para garantizar el correcto funcionamiento de instalaciones, equipos e infraestructuras. Nos ocupamos de tareas como mantenimiento eléctrico, sanitario, mecánico, climatización, pintura, jardinería y más, con personal capacitado y comprometido con altos estándares de calidad y seguridad. Trabajamos bajo una planificación personalizada para cada cliente, asegurando la continuidad operativa de los espacios y contribuyendo al cuidado del patrimonio edilicio a largo plazo.",
+//     imageUrl: Service1.src,
+//   },
+//   {
+//     title: "Limpieza",
+//     description:
+//       "La limpieza representa diferentes cosas para distintas personas y organizaciones, ya que cada espacio presenta necesidades específicas y expectativas particulares. Lo que todos tienen en común es la importancia de contar con un entorno limpio, ordenado y seguro, que contribuya al bienestar, promueva la productividad y genere una impresión positiva en quienes lo habitan o lo visitan. En Bazurco entendemos que un ambiente higiénico no solo impacta la salud, sino también el confort y la eficiencia de quienes lo habitan o visitan. Por eso, nuestro enfoque se basa en cumplir con los más altos estándares de seguridad e higiene, adaptándonos a las necesidades de cada cliente y cumpliendo con las normativas y certificaciones internacionales como ISO y protocolos sanitarios. Contamos con personal altamente capacitado y procesos estructurados que aseguran resultados consistentes y confiables, alineados con las mejores prácticas del sector. Nuestro compromiso es ofrecer un servicio profesional que brinde confianza, calidad y seguridad en cada detalle.",
+//     imageUrl: Service2.src,
+//   },
+// ];
+
+const nosotrosHeaderContent: Array<{
+  title: string;
+  description: string;
+}> = [
   {
-    title: "Mantenimiento",
+    title: "¿Quiénes somos?",
     description:
-      "El mantenimiento es fundamental para asegurar la continuidad y la optimización de las instalaciones de inmuebles y equipos en todas las actividades. El servicio de mantenimiento prestado por Bazurco se realiza a partir de analizar y diagnosticar el estado de equipos e instalaciones, para proponer las mejoras a realizar y el tipo de mantenimiento que resulte necesario.En Bazurco nos especializamos en brindar servicios integrales de mantenimiento para una amplia variedad de espacios, incluyendo hogares, oficinas, industrias, centros comerciales, fábricas y espacios verdes y recreativos. Nuestro enfoque combina la eficiencia operativa con el uso de tecnología y recursos adecuados para garantizar el correcto funcionamiento de instalaciones, equipos e infraestructuras. Nos ocupamos de tareas como mantenimiento eléctrico, sanitario, mecánico, climatización, pintura, jardinería y más, con personal capacitado y comprometido con altos estándares de calidad y seguridad. Trabajamos bajo una planificación personalizada para cada cliente, asegurando la continuidad operativa de los espacios y contribuyendo al cuidado del patrimonio edilicio a largo plazo.",
-    imageUrl: Service1.src,
+      "En Bazurco Facility Services ofrecemos soluciones integrales para asegurar el correcto funcionamiento, la limpieza y el orden de las instalaciones de nuestros clientes. Nuestro trabajo incluye la limpieza general de espacios y un servicio de mantenimiento preventivo y correctivo que garantiza la operatividad de la infraestructura mediante inspecciones, reparaciones y asistencia técnica. También brindamos servicios auxiliares y apoyo en situaciones que requieren una respuesta inmediata, como reacondicionamiento de áreas, gestión de residuos o refuerzo de equipos internos. Con planificación, supervisión constante y presencia operativa, aseguramos entornos seguros, eficientes y adaptados a las necesidades de cada organización.",
   },
   {
-    title: "Limpieza",
+    title: "¿Qué hacemos?",
     description:
-      "La limpieza representa diferentes cosas para distintas personas y organizaciones, ya que cada espacio presenta necesidades específicas y expectativas particulares. Lo que todos tienen en común es la importancia de contar con un entorno limpio, ordenado y seguro, que contribuya al bienestar, promueva la productividad y genere una impresión positiva en quienes lo habitan o lo visitan. En Bazurco entendemos que un ambiente higiénico no solo impacta la salud, sino también el confort y la eficiencia de quienes lo habitan o visitan. Por eso, nuestro enfoque se basa en cumplir con los más altos estándares de seguridad e higiene, adaptándonos a las necesidades de cada cliente y cumpliendo con las normativas y certificaciones internacionales como ISO y protocolos sanitarios. Contamos con personal altamente capacitado y procesos estructurados que aseguran resultados consistentes y confiables, alineados con las mejores prácticas del sector. Nuestro compromiso es ofrecer un servicio profesional que brinde confianza, calidad y seguridad en cada detalle.",
-    imageUrl: Service2.src,
+      "En Bazurco Facility Services brindamos soluciones integrales orientadas a asegurar el correcto funcionamiento, la limpieza y el orden de las instalaciones de nuestros clientes. Nuestro trabajo abarca la limpieza general de espacios, el mantenimiento preventivo y correctivo de infraestructura, la desinfección y el ordenamiento de áreas operativas, así como servicios auxiliares que complementan y optimizan la actividad diaria de cada organización. También intervenimos en situaciones que requieren una respuesta inmediata, ofreciendo apoyo para reacondicionar ambientes, gestionar residuos, recuperar zonas afectadas y reforzar equipos internos cuando es necesario. Nuestro enfoque combina planificación, supervisión constante y presencia operativa para garantizar entornos seguros, eficientes y en perfectas condiciones de uso, adaptándonos siempre a las necesidades específicas de cada cliente.",
+  },
+  {
+    title: "¿Cómo lo hacemos?",
+    description:
+      "En Bazurco Facility Services trabajamos con un enfoque planificado y operativo que combina organización, supervisión constante y equipos capacitados en cada área de servicio. Realizamos diagnósticos iniciales para entender las necesidades de cada cliente y definir un plan de trabajo a medida. Implementamos procedimientos estandarizados, controles de calidad y comunicación permanente para asegurar que cada tarea se ejecute de manera eficiente y segura. Operamos con recursos propios, tecnología adecuada y una coordinación interna que nos permite responder con rapidez, adaptarnos a imprevistos y garantizar resultados consistentes en todos los entornos donde intervenimos.",
+  },
+  {
+    title: "¿Por qué nosotros?",
+    description:
+      "Elegir Bazurco Facility Services significa contar con un socio confiable que prioriza la calidad, la eficiencia y la atención personalizada. Nos destacamos por nuestra capacidad de respuesta, nuestro compromiso operativo y la experiencia de equipos entrenados para trabajar en entornos exigentes. Aportamos soluciones claras y prácticas, con supervisión constante y un enfoque orientado a resultados reales, no solo a tareas. Adaptamos cada servicio a las necesidades específicas de cada cliente, garantizando continuidad operativa, seguridad y un estándar de trabajo consistente. Nuestra forma de trabajar se basa en la transparencia, el cumplimiento y la construcción de relaciones duraderas, lo que convierte a Bazurco en un aliado estratégico para el día a día y también para situaciones extraordinarias.",
   },
 ];
 
-const nosotrosData: Array<{
+const nosotrosFootColumns: Array<{
   title: string;
   description: string;
   list?: string[];
@@ -62,15 +89,25 @@ const nosotrosData: Array<{
   <PageParallax imageUrl={heroImage.src} title="Bienvenido a Bazurco" />
 
   <div class="mx-auto max-w-[80%] py-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="flex flex-col gap-16">
       {
-        nosotrosGrid.map((service) => (
-          <NosotrosCard
-            client:load
-            title={service.title}
-            description={service.description}
-            imageUrl={service.imageUrl}
-          />
+        //Client removed this grid...
+        // nosotrosGrid.map((service) => (
+        //   <NosotrosCard
+        //     client:load
+        //     title={service.title}
+        //     description={service.description}
+        //     imageUrl={service.imageUrl}
+        //   />
+        // ))
+
+        nosotrosHeaderContent.map((item) => (
+          <div>
+            <h2 class="text-4xl font-semibold text-blue-400 mb-6">
+              {item.title}
+            </h2>
+            <p class="text-justify mx-[6%]">{item.description}</p>
+          </div>
         ))
       }
     </div>
@@ -80,7 +117,7 @@ const nosotrosData: Array<{
 
   <div class="flex md:px-20 px-8 py-16 gap-16 flex-col md:flex-row">
     {
-      nosotrosData.map((item) => (
+      nosotrosFootColumns.map((item) => (
         <div class="flex-1 flex flex-col gap-2">
           <h3 class="text-4xl font-semibold text-blue-400">{item.title}</h3>
           {item?.list ? (

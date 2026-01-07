@@ -9,8 +9,34 @@ import Service3 from "../assets/servicio-shopping.jpg";
 import Service4 from "../assets/servicio-espacios-verdes.webp";
 import Service5 from "../assets/servicio-fabrica.png";
 import Service6 from "../assets/servicio-edificio.webp";
+import { cn } from "../lib/utils";
 
-const serviceData = [
+const servicesHeaderContent: {
+  title: string;
+  description: string;
+  icon: string;
+}[] = [
+  {
+    title: "Limpieza",
+    description:
+      "Nuestro servicio de limpieza está diseñado para garantizar espacios seguros, ordenados y en óptimas condiciones de uso. Realizamos tareas de limpieza general, mantenimiento diario, tratamientos específicos según el tipo de superficie y rutinas de higiene adaptadas a cada entorno, ya sean oficinas, plantas industriales, depósitos o áreas de alta circulación. Trabajamos con equipos capacitados, productos adecuados y procedimientos estandarizados que aseguran resultados consistentes y de alta calidad. Nuestro objetivo es que cada instalación se mantenga limpia, funcional y preparada para el desarrollo normal de las actividades, respondiendo con rapidez y flexibilidad ante cualquier necesidad puntual.",
+    icon: "✔️",
+  },
+  {
+    title: "Mantenimiento",
+    description:
+      "Nuestro servicio de limpieza está diseñado para garantizar espacios seguros, ordenados y en óptimas condiciones de uso. Realizamos tareas de limpieza general, mantenimiento diario, tratamientos específicos según el tipo de superficie y rutinas de higiene adaptadas a cada entorno, ya sean oficinas, plantas industriales, depósitos o áreas de alta circulación. Trabajamos con equipos capacitados, productos adecuados y procedimientos estandarizados que aseguran resultados consistentes y de alta calidad. Nuestro objetivo es que cada instalación se mantenga limpia, funcional y preparada para el desarrollo normal de las actividades, respondiendo con rapidez y flexibilidad ante cualquier necesidad puntual.",
+    icon: "🌱",
+  },
+  {
+    title: "Parquización",
+    description:
+      "Nuestro servicio de parquización está orientado a mantener y mejorar los espacios verdes, asegurando áreas prolijas, seguras y visualmente agradables. Realizamos corte de césped, poda, desmalezado, mantenimiento de canteros, limpieza de sectores exteriores y cuidado general del arbolado según las necesidades de cada establecimiento. Contamos con equipos capacitados y herramientas específicas que nos permiten trabajar de manera eficiente tanto en parques amplios como en áreas verdes de uso cotidiano. Nuestro objetivo es conservar cada espacio en óptimas condiciones, aportando orden, estética y funcionalidad al entorno.",
+    icon: "💼",
+  },
+];
+
+const servicesCardContent = [
   {
     title: "Instalaciones y complejos deportivos",
     description:
@@ -53,11 +79,64 @@ const serviceData = [
 <Layout title="Servicios" description="Información sobre nuestros servicios">
   <PageParallax imageUrl={heroImage.src} title="Servicios" />
 
+  <div class="max-w-[80%] mx-auto py-12">
+    <div class="flex flex-col">
+      {
+        servicesHeaderContent.map((item, idx) => (
+          <div class="mb-12">
+            <h3
+              class={cn(
+                "text-3xl uppercase font-bold mb-2 text-blue-400",
+                idx % 2 === 0 ? "text-left" : "text-right"
+              )}
+            >
+              <span
+                class={cn(
+                  "flex items-baseline gap-1",
+                  idx % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                )}
+              >
+                <span class="text-5xl">{item.icon}</span>
+                <span>{item.title}</span>
+              </span>
+            </h3>
+            <p class="pl-[4%] text-xl text-justify">{item.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="max-w-[82%] mx-auto py-12">
+    <h2 class="text-7xl font-semibold text-white mb-8 text-center uppercase">
+      <span class="flex items-center justify-center gap-4">
+        <span>💼</span>
+        <span class="bg-blue-400 rounded-full block py-4">
+          Servicios Auxiliares Administrativos
+        </span>
+        <span>💼</span>
+      </span>
+    </h2>
+    <p class="text-xl py-10">
+      Nuestro servicio de auxiliares administrativos brinda apoyo operativo para
+      optimizar las tareas diarias de cada organización y aliviar la carga de
+      los equipos internos. Realizamos gestiones básicas, control de
+      documentación, asistencia en recepción, ordenamiento de archivos,
+      coordinación de trámites y soporte en actividades administrativas
+      cotidianas, siempre con personal capacitado y criterios de trabajo
+      eficientes. Nos adaptamos a las necesidades de cada área para mejorar los
+      tiempos, el orden y la continuidad de los procesos.
+      <span class="block text-center mt-2">
+        Estos son algunos de los servicios que podemos ofrecerles…
+      </span>
+    </p>
+  </div>
+
   <div
     class="max-w-[90%] mx-auto gap-16 py-12 flex flex-wrap justify-center items-center"
   >
     {
-      serviceData.map((item) => (
+      servicesCardContent.map((item) => (
         <div class="w-[390px] h-[80vh] md:h-[70vh] overflow-hidden relative group rounded-lg">
           <img
             src={item.imageUrl}
