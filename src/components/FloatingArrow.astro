@@ -8,7 +8,7 @@ const isContactPage = pathname === "/contacto";
 
 <a
   class={cn(
-    "fixed block right-0 bottom-20 z-50 cursor-pointer hover:scale-105 transition-transform duration-300 motion-safe:animate-small-bounce",
+    "fixed right-0 bottom-20 z-50 cursor-pointer hover:scale-105 transition-transform duration-300 motion-safe:animate-small-bounce hidden lg:block",
     isContactPage && "hidden"
   )}
   href="/contacto"
