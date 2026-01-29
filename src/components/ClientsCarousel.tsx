@@ -27,7 +27,7 @@ export default function ClientsCarousel() {
         _images.map(async ([path, image]) => {
           const metadata = (await image()) as { src: string };
           return { path, metadata };
-        })
+        }),
       );
 
       setClientsImages(images);
@@ -43,23 +43,23 @@ export default function ClientsCarousel() {
         <h2 className="text-center text-2xl font-bold mb-8 text-white">
           Nuestros Clientes
         </h2>
-        <Swiper
-          slidesPerView={5}
-          modules={[Navigation, Autoplay]}
-          spaceBetween={40}
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: false,
-          }}
-          navigation={{ enabled: true }}
-          loop={true}
-        >
-          {loadingImages ? (
-            <div className="w-full h-full flex items-center justify-center">
-              <div className="w-16 h-16 border-4 border-t-4 border-t-blue-500 rounded-full animate-spin"></div>
-            </div>
-          ) : (
-            clientsImages.map(({ path, metadata: { src } }) => (
+        {loadingImages ? (
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="w-16 h-16 border-4 border-t-4 border-t-blue-500 rounded-full animate-spin"></div>
+          </div>
+        ) : (
+          <Swiper
+            slidesPerView="auto"
+            modules={[Navigation, Autoplay]}
+            spaceBetween={20}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+            }}
+            navigation={{ enabled: true }}
+            loop={true}
+          >
+            {clientsImages.map(({ path, metadata: { src } }) => (
               <SwiperSlide
                 key={path}
                 className="flex justify-center items-center !bg-white !size-[100px]  md:!size-[200px] "
@@ -70,9 +70,9 @@ export default function ClientsCarousel() {
                   className="object-contain w-full h-full"
                 />
               </SwiperSlide>
-            ))
-          )}
-        </Swiper>
+            ))}
+          </Swiper>
+        )}
       </div>
     </div>
   );

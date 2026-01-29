@@ -48,7 +48,7 @@ importers:
         specifier: ^7.56.4
         version: 7.56.4(react@19.1.0)
       swiper:
-        specifier: ^11.2.6
+        specifier: 11.2.6
         version: 11.2.6
       tailwindcss:
         specifier: ^4.0.17
